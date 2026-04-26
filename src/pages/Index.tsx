@@ -169,6 +169,17 @@ const NEWS = [
     ],
   },
   {
+    date: "12 апреля 2026",
+    emoji: "🚀",
+    color: "bg-kidz-blue",
+    title: "День космонавтики",
+    text: "Отметили День космонавтики! Дети узнали о первом полёте человека в космос, мастерили ракеты и нарисовали целую выставку космических кораблей. Поехали!",
+    photos: [
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/6c0cc318-fcf8-4127-9a90-c1f210fde737.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/3af32f58-7666-44e9-b622-f89dd13b6159.jpg",
+    ],
+  },
+  {
     date: "18 апреля 2026",
     emoji: "🌱",
     color: "bg-kidz-green",
@@ -239,15 +250,7 @@ const GALLERY_GROUPS = [
     ],
   },
 
-  {
-    title: "Космос",
-    emoji: "🚀",
-    color: "text-kidz-blue",
-    items: [
-      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/6c0cc318-fcf8-4127-9a90-c1f210fde737.jpg", label: "Изучаем ракету" },
-      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/3af32f58-7666-44e9-b622-f89dd13b6159.jpg", label: "Рисунки «Ракеты»" },
-    ],
-  },
+
   {
     title: "Занятия",
     emoji: "🎨",

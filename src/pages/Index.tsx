@@ -4,8 +4,9 @@ import Icon from "@/components/ui/icon";
 const NAV_ITEMS = [
   { id: "home", label: "Главная" },
   { id: "about", label: "Обо мне" },
+  { id: "news", label: "Новости" },
   { id: "gallery", label: "Галерея" },
-  { id: "articles", label: "Развитие" },
+  { id: "articles", label: "Статьи" },
   { id: "schedule", label: "Расписание" },
   { id: "achievements", label: "Достижения" },
   { id: "contacts", label: "Контакты" },
@@ -152,6 +153,37 @@ const ARTICLES = [
 — Жалуется на боли в животе по утрам
 
 Если вы замечаете эти признаки — поговорите с воспитателем. Вместе мы найдём причину и поможем малышу.`,
+  },
+];
+
+const NEWS = [
+  {
+    date: "25 апреля 2026",
+    emoji: "🌸",
+    color: "bg-kidz-pink",
+    title: "Праздник весны в нашей группе",
+    text: "Отметили приход весны: дети читали стихи, пели песни и смастерили весенние поделки из природных материалов. Было очень весело и тепло!",
+  },
+  {
+    date: "18 апреля 2026",
+    emoji: "🥕",
+    color: "bg-kidz-orange",
+    title: "Объявление: огород на подоконнике",
+    text: "Начинаем совместный проект — сажаем лук, укроп и петрушку прямо в группе. Приносите небольшие горшочки или контейнеры для рассады. Дети будут наблюдать за ростом растений.",
+  },
+  {
+    date: "10 апреля 2026",
+    emoji: "🎨",
+    color: "bg-kidz-blue",
+    title: "Выставка детских рисунков",
+    text: "В холле детского сада открылась выставка работ наших воспитанников на тему «Мой любимый город». Приглашаем всех родителей полюбоваться творчеством детей!",
+  },
+  {
+    date: "1 апреля 2026",
+    emoji: "😄",
+    color: "bg-kidz-yellow",
+    title: "День смеха и юмора",
+    text: "Провели весёлый день с розыгрышами, смешными загадками и конкурсом на лучшую улыбку. Смех — лучшее лекарство, и наши дети это точно знают!",
   },
 ];
 
@@ -366,6 +398,28 @@ export default function Index() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* NEWS */}
+      <section id="news" className="relative z-10 py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <SectionTitle emoji="📰" title="Новости" color="text-kidz-orange" />
+          <p className="text-center text-gray-500 mt-2 mb-10">События и объявления нашей группы</p>
+          <div className="grid md:grid-cols-2 gap-6">
+            {NEWS.map((item, i) => (
+              <div key={i} className="bg-kidz-cream rounded-3xl p-6 hover:shadow-xl transition-all duration-300">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className={`${item.color} w-11 h-11 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0`}>
+                    {item.emoji}
+                  </div>
+                  <span className="text-xs text-gray-400 font-semibold">{item.date}</span>
+                </div>
+                <h3 className="font-bold text-gray-800 text-base mb-2 leading-tight">{item.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{item.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

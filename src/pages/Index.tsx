@@ -51,12 +51,9 @@ const SCHEDULE = [
 ];
 
 const ACHIEVEMENTS = [
-  { emoji: "🏆", name: "Саша М.", age: "5 лет", achievement: "Победитель конкурса рисунков «Мир глазами детей»", color: "border-kidz-yellow" },
-  { emoji: "🌟", name: "Маша К.", age: "4 года", achievement: "Лучшее выступление на утреннике — стихотворение наизусть", color: "border-kidz-pink" },
-  { emoji: "🎨", name: "Дима Р.", age: "5 лет", achievement: "Первое место в городском конкурсе поделок из природных материалов", color: "border-kidz-purple" },
-  { emoji: "📖", name: "Алина С.", age: "6 лет", achievement: "Научилась читать по слогам — самая юная читательница группы", color: "border-kidz-blue" },
-  { emoji: "🎭", name: "Ваня Т.", age: "5 лет", achievement: "Главная роль в сказке «Репка» на районном фестивале", color: "border-kidz-green" },
-  { emoji: "🧩", name: "Оля Н.", age: "4 года", achievement: "Победительница математической олимпиады среди дошкольников", color: "border-kidz-orange" },
+  { emoji: "🥇", name: "Ногин Леонид", age: "4 года", achievement: "I место — Региональный конкурс «Космос загадочный и бесконечный», федеральный журнал «Звёздочка наша», Новосибирская область", color: "border-kidz-yellow" },
+  { emoji: "🥈", name: "Юркин Виктор", age: "4 года", achievement: "II место — Региональный конкурс «Космос загадочный и бесконечный», федеральный журнал «Звёздочка наша», Новосибирская область", color: "border-kidz-blue" },
+  { emoji: "🥉", name: "Северова Анастасия", age: "4 года", achievement: "III место — Региональный конкурс «Космос загадочный и бесконечный», федеральный журнал «Звёздочка наша», Новосибирская область", color: "border-kidz-orange" },
 ];
 
 const GALLERY_ITEMS = [

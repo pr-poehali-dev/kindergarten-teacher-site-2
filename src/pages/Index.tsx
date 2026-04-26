@@ -288,6 +288,7 @@ export default function Index() {
   };
 
   return (
+    <>
     <div className="min-h-screen font-nunito bg-kidz-cream overflow-x-hidden">
       {/* Floating background blobs */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
@@ -533,34 +534,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ARTICLE MODAL */}
-      {openArticle && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50" onClick={() => setOpenArticle(null)}>
-          <div
-            className="bg-white rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="sticky top-0 bg-white border-b border-gray-100 px-6 py-4 flex items-center justify-between rounded-t-3xl">
-              <div className="flex items-center gap-3">
-                <div className={`${openArticle.color} w-10 h-10 rounded-xl flex items-center justify-center text-xl`}>
-                  {openArticle.emoji}
-                </div>
-                <div>
-                  <div className="inline-block bg-gray-100 text-gray-500 text-xs font-bold px-2 py-0.5 rounded-full mb-0.5">{openArticle.tag}</div>
-                  <h2 className="font-bold text-gray-800 text-base leading-tight">{openArticle.title}</h2>
-                </div>
-              </div>
-              <button onClick={() => setOpenArticle(null)} className="text-gray-400 hover:text-gray-700 transition-colors ml-4">
-                <Icon name="X" size={24} />
-              </button>
-            </div>
-            <div className="px-6 py-6 text-gray-700 text-sm leading-relaxed whitespace-pre-line">
-              {openArticle.content}
-            </div>
-          </div>
-        </div>
-      )}
-
       {/* SCHEDULE */}
       <section id="schedule" className="relative z-10 py-20 px-4">
         <div className="max-w-6xl mx-auto">
@@ -693,5 +666,33 @@ export default function Index() {
         <div className="text-gray-600 text-xs mt-4">© 2024 Все права защищены</div>
       </footer>
     </div>
+
+      {openArticle && (
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/50" onClick={() => setOpenArticle(null)}>
+          <div
+            className="bg-white rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="sticky top-0 bg-white border-b border-gray-100 px-6 py-4 flex items-center justify-between rounded-t-3xl">
+              <div className="flex items-center gap-3">
+                <div className={`${openArticle.color} w-10 h-10 rounded-xl flex items-center justify-center text-xl`}>
+                  {openArticle.emoji}
+                </div>
+                <div>
+                  <div className="inline-block bg-gray-100 text-gray-500 text-xs font-bold px-2 py-0.5 rounded-full mb-0.5">{openArticle.tag}</div>
+                  <h2 className="font-bold text-gray-800 text-base leading-tight">{openArticle.title}</h2>
+                </div>
+              </div>
+              <button onClick={() => setOpenArticle(null)} className="text-gray-400 hover:text-gray-700 transition-colors ml-4">
+                <Icon name="X" size={24} />
+              </button>
+            </div>
+            <div className="px-6 py-6 text-gray-700 text-sm leading-relaxed whitespace-pre-line">
+              {openArticle.content}
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 }

@@ -60,7 +60,7 @@ const ACHIEVEMENTS = [
 ];
 
 const GALLERY_ITEMS = [
-  { emoji: "🎨", label: "Урок рисования", color: "bg-kidz-pink" },
+  { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/8cd61219-ca6d-4ddc-b263-d4952d5e8a5a.jpg", label: "Занятие по рисованию", color: "bg-kidz-pink" },
   { emoji: "🧸", label: "Игровое время", color: "bg-kidz-blue" },
   { emoji: "🎭", label: "Театральная постановка", color: "bg-kidz-purple" },
   { emoji: "🌿", label: "Прогулка на природе", color: "bg-kidz-green" },
@@ -194,8 +194,8 @@ export default function Index() {
               <div className="absolute inset-0 rounded-full border-4 border-dashed border-kidz-yellow animate-spin-slow" />
               <div className="absolute inset-4 bg-gradient-to-br from-kidz-yellow via-kidz-orange to-kidz-pink rounded-full opacity-30 blur-2xl" />
               <img
-                src="https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/files/46d528fd-8ac7-4fa3-ab40-eab9f2a88bf3.jpg"
-                alt="Воспитатель"
+                src="https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/f22a45c6-3e68-4279-9065-e0f189722923.jpg"
+                alt="Мария Михайловна Говорова"
                 className="absolute inset-6 w-[calc(100%-3rem)] h-[calc(100%-3rem)] object-cover rounded-full border-4 border-white shadow-2xl"
               />
               <div className="absolute -top-3 -right-3 bg-white rounded-2xl shadow-lg px-3 py-2 font-bold text-xl animate-float">🎨</div>
@@ -259,11 +259,21 @@ export default function Index() {
             {GALLERY_ITEMS.map((item, i) => (
               <div
                 key={i}
-                className={`${item.color} rounded-3xl aspect-square flex flex-col items-center justify-center gap-3 hover:scale-105 transition-transform cursor-pointer shadow-md hover:shadow-xl`}
+                className={`${'photo' in item ? '' : item.color} rounded-3xl aspect-square flex flex-col items-center justify-center gap-3 hover:scale-105 transition-transform cursor-pointer shadow-md hover:shadow-xl overflow-hidden relative`}
               >
-                <div className="text-6xl">{item.emoji}</div>
-                <div className="text-white font-bold text-sm text-center px-4">{item.label}</div>
-                <div className="text-white/70 text-xs">Нажмите для просмотра</div>
+                {'photo' in item ? (
+                  <>
+                    <img src={item.photo} alt={item.label} className="absolute inset-0 w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-black/30 rounded-3xl" />
+                    <div className="relative text-white font-bold text-sm text-center px-4">{item.label}</div>
+                  </>
+                ) : (
+                  <>
+                    <div className="text-6xl">{item.emoji}</div>
+                    <div className="text-white font-bold text-sm text-center px-4">{item.label}</div>
+                    <div className="text-white/70 text-xs">Нажмите для просмотра</div>
+                  </>
+                )}
               </div>
             ))}
           </div>

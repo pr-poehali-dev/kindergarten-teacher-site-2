@@ -9,6 +9,7 @@ const NAV_ITEMS = [
   { id: "articles", label: "Статьи" },
   { id: "schedule", label: "Расписание" },
   { id: "achievements", label: "Достижения" },
+  { id: "reviews", label: "Отзывы" },
   { id: "contacts", label: "Контакты" },
 ];
 
@@ -745,6 +746,19 @@ export default function Index() {
               <span className="text-xl">🌟</span>
               Все достижения группы
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* REVIEWS */}
+      <section id="reviews" className="relative z-10 py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <SectionTitle emoji="💬" title="Отзывы" color="text-kidz-purple" />
+          <p className="text-center text-gray-500 mt-2 mb-10">Что говорят родители наших воспитанников</p>
+          <div className="flex flex-col items-center justify-center py-16 text-center">
+            <div className="text-6xl mb-4">💌</div>
+            <p className="text-gray-400 text-lg font-semibold mb-2">Отзывы скоро появятся здесь</p>
+            <p className="text-gray-400 text-sm">Если вы хотите оставить отзыв — напишите нам в разделе «Контакты»</p>
           </div>
         </div>
       </section>

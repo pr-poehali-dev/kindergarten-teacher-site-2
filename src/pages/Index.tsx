@@ -105,7 +105,7 @@ export default function Index() {
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm border-b-2 border-kidz-yellow">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <button onClick={() => scrollTo("home")} className="font-pacifico text-2xl text-kidz-orange hover:scale-105 transition-transform">
-            🌈 Мария Говорова
+            🌈 Говорова Мария Михайловна
           </button>
           <div className="hidden md:flex items-center gap-1">
             {NAV_ITEMS.map((item) => (
@@ -155,7 +155,7 @@ export default function Index() {
             </div>
             <h1 className="font-pacifico text-5xl md:text-6xl text-gray-800 leading-tight mb-4">
               Привет!<br />
-              <span className="text-kidz-orange">Я Мария</span> ☀️
+              <span className="text-kidz-orange">Я Мария Михайловна</span> ☀️
             </h1>
             <p className="text-lg text-gray-600 mb-8 max-w-md leading-relaxed">
               Создаю для детей радостный мир знаний, творчества и дружбы. Каждый день — новое приключение!

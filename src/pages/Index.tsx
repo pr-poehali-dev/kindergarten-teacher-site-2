@@ -150,7 +150,7 @@ export default function Index() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
           <div className="flex-1 text-center md:text-left">
             <div className="inline-block bg-kidz-yellow/40 text-kidz-orange font-bold px-4 py-1.5 rounded-full text-sm mb-4">
-              🎓 Воспитатель высшей категории
+              🎓 Воспитатель 1 квалификационной категории
             </div>
             <h1 className="font-pacifico text-5xl md:text-6xl text-gray-800 leading-tight mb-4">
               Привет!<br />
@@ -219,7 +219,7 @@ export default function Index() {
                 {[
                   { emoji: "🎓", text: "Новосибирское педагогическое училище №2" },
                   { emoji: "📜", text: "Учитель начальных классов" },
-                  { emoji: "🏅", text: "Лучший воспитатель 2023" },
+                  { emoji: "🏅", text: "1 квалификационная категория" },
                   { emoji: "🌍", text: "Автор методик" },
                 ].map((item) => (
                   <div key={item.text} className="flex items-center gap-2 bg-kidz-cream rounded-xl p-3 font-semibold text-sm text-gray-700">
@@ -438,7 +438,7 @@ export default function Index() {
       {/* FOOTER */}
       <footer className="relative z-10 bg-gray-800 text-white py-8 px-4 text-center">
         <div className="font-pacifico text-2xl text-kidz-yellow mb-2">🌈 Мария Говорова</div>
-        <div className="text-gray-400 text-sm">Воспитатель высшей категории · Растим счастливых детей</div>
+        <div className="text-gray-400 text-sm">Воспитатель 1 квалификационной категории · Растим счастливых детей</div>
         <div className="text-gray-600 text-xs mt-4">© 2024 Все права защищены</div>
       </footer>
     </div>

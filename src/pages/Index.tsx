@@ -212,14 +212,56 @@ const ACHIEVEMENTS = [
   { emoji: "🥉", name: "Северова Анастасия", age: "4 года", achievement: "III место — Региональный конкурс «Космос загадочный и бесконечный», федеральный журнал «Звёздочка наша», Новосибирская область", color: "border-kidz-orange" },
 ];
 
-const GALLERY_ITEMS = [
-  { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/8cd61219-ca6d-4ddc-b263-d4952d5e8a5a.jpg", label: "Занятие по рисованию", color: "bg-kidz-pink" },
-  { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/0e498fc8-7b61-4a69-9173-af05ec912af0.jpg", label: "Ролевая игра «Доктор»", color: "bg-kidz-blue" },
-  { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/6cc21e0f-0cf1-4e06-a008-f84b7ad16b6d.jpg", label: "Поделка «Победа 1941–1945»", color: "bg-kidz-red" },
-  { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/c98b6c70-4225-4910-94b7-5bfc4f17f731.jpg", label: "Поделка «9 Мая»", color: "bg-kidz-purple" },
-  { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/70d85b16-7a06-4982-b075-776355b296c3.jpg", label: "Поделка «Вечный огонь»", color: "bg-kidz-orange" },
-  { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/c61b5ba4-3889-4f82-b479-a36f9e68ce2b.jpg", label: "Поделка «9 Мая — цветы»", color: "bg-kidz-green" },
-  { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/709d02fc-a14a-4c54-be61-d13ed310c4a1.jpg", label: "Поделка «Гармонь с цветами»", color: "bg-kidz-pink" },
+const GALLERY_GROUPS = [
+  {
+    title: "Сказки",
+    emoji: "📖",
+    color: "text-kidz-purple",
+    items: [
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/6d77832f-727c-4dee-9dd8-16ca884080bd.jpg", label: "Настольные игры по сказкам" },
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/88149f49-a9c3-4149-84b6-5ac095c1e90e.jpg", label: "Занятие по сказкам у доски" },
+    ],
+  },
+  {
+    title: "Огород на подоконнике",
+    emoji: "🌱",
+    color: "text-kidz-green",
+    items: [
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/6debbf20-b4f0-43d7-b9ab-24fc52f2f7ab.jpg", label: "Поливаем растения" },
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/ae9e69bf-4883-42be-9cf5-19a22ff655de.jpg", label: "Сажаем лук" },
+    ],
+  },
+  {
+    title: "Космос",
+    emoji: "🚀",
+    color: "text-kidz-blue",
+    items: [
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/6c0cc318-fcf8-4127-9a90-c1f210fde737.jpg", label: "Изучаем ракету" },
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/3af32f58-7666-44e9-b622-f89dd13b6159.jpg", label: "Рисунки «Ракеты»" },
+    ],
+  },
+  {
+    title: "Занятия",
+    emoji: "🎨",
+    color: "text-kidz-orange",
+    items: [
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/6a693d53-5084-4aa4-8233-4a7297e10cfc.jpg", label: "Занятие о полезных продуктах" },
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/8cd61219-ca6d-4ddc-b263-d4952d5e8a5a.jpg", label: "Занятие по рисованию" },
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/0e498fc8-7b61-4a69-9173-af05ec912af0.jpg", label: "Ролевая игра «Доктор»" },
+    ],
+  },
+  {
+    title: "Поделки 9 Мая",
+    emoji: "🎖️",
+    color: "text-kidz-pink",
+    items: [
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/6cc21e0f-0cf1-4e06-a008-f84b7ad16b6d.jpg", label: "Победа 1941–1945" },
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/c98b6c70-4225-4910-94b7-5bfc4f17f731.jpg", label: "Поделка «9 Мая»" },
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/70d85b16-7a06-4982-b075-776355b296c3.jpg", label: "Вечный огонь" },
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/c61b5ba4-3889-4f82-b479-a36f9e68ce2b.jpg", label: "Цветы к 9 Мая" },
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/709d02fc-a14a-4c54-be61-d13ed310c4a1.jpg", label: "Гармонь с цветами" },
+    ],
+  },
 ];
 
 function SectionTitle({ emoji, title, color }: { emoji: string; title: string; color: string }) {
@@ -447,32 +489,21 @@ export default function Index() {
         <div className="max-w-6xl mx-auto">
           <SectionTitle emoji="📸" title="Галерея" color="text-kidz-blue" />
           <p className="text-center text-gray-500 mt-2 mb-10">Моменты из жизни нашей группы</p>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {GALLERY_ITEMS.map((item, i) => (
-              <div
-                key={i}
-                className={`${'photo' in item ? '' : item.color} rounded-3xl aspect-square flex flex-col items-center justify-center gap-3 hover:scale-105 transition-transform cursor-pointer shadow-md hover:shadow-xl overflow-hidden relative`}
-              >
-                {'photo' in item ? (
-                  <>
-                    <img src={item.photo} alt={item.label} className="absolute inset-0 w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-black/30 rounded-3xl" />
-                    <div className="relative text-white font-bold text-sm text-center px-4">{item.label}</div>
-                  </>
-                ) : (
-                  <>
-                    <div className="text-6xl">{item.emoji}</div>
-                    <div className="text-white font-bold text-sm text-center px-4">{item.label}</div>
-                    <div className="text-white/70 text-xs">Нажмите для просмотра</div>
-                  </>
-                )}
+          <div className="space-y-12">
+            {GALLERY_GROUPS.map((group, gi) => (
+              <div key={gi}>
+                <h3 className={`font-pacifico text-2xl ${group.color} mb-4`}>{group.emoji} {group.title}</h3>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  {group.items.map((item, i) => (
+                    <div key={i} className="rounded-3xl aspect-square overflow-hidden relative shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 cursor-pointer">
+                      <img src={item.photo} alt={item.label} className="absolute inset-0 w-full h-full object-cover" />
+                      <div className="absolute inset-0 bg-black/25 rounded-3xl" />
+                      <div className="absolute bottom-0 left-0 right-0 p-3 text-white font-bold text-xs text-center">{item.label}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
-          </div>
-          <div className="text-center mt-8">
-            <button className="bg-kidz-blue text-white font-bold px-8 py-3 rounded-2xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200">
-              Загрузить все фото 🖼️
-            </button>
           </div>
         </div>
       </section>

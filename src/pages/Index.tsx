@@ -107,7 +107,7 @@ export default function Index() {
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm border-b-2 border-kidz-yellow">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <button onClick={() => scrollTo("home")} className="font-pacifico text-2xl text-kidz-orange hover:scale-105 transition-transform">
-            🌈 Анна Петрова
+            🌈 Мария Говорова
           </button>
           <div className="hidden md:flex items-center gap-1">
             {NAV_ITEMS.map((item) => (
@@ -157,7 +157,7 @@ export default function Index() {
             </div>
             <h1 className="font-pacifico text-5xl md:text-6xl text-gray-800 leading-tight mb-4">
               Привет!<br />
-              <span className="text-kidz-orange">Я Анна</span> ☀️
+              <span className="text-kidz-orange">Я Мария</span> ☀️
             </h1>
             <p className="text-lg text-gray-600 mb-8 max-w-md leading-relaxed">
               Создаю для детей радостный мир знаний, творчества и дружбы. Каждый день — новое приключение!
@@ -178,7 +178,7 @@ export default function Index() {
             </div>
             <div className="flex gap-6 mt-10 justify-center md:justify-start">
               {[
-                { value: "12+", label: "лет опыта", color: "text-kidz-orange" },
+                { value: "20+", label: "лет опыта", color: "text-kidz-orange" },
                 { value: "200+", label: "выпускников", color: "text-kidz-pink" },
                 { value: "50+", label: "наград", color: "text-kidz-purple" },
               ].map((s) => (
@@ -213,7 +213,7 @@ export default function Index() {
           <div className="grid md:grid-cols-2 gap-10 mt-10">
             <div className="space-y-5">
               <p className="text-gray-700 text-lg leading-relaxed">
-                Я воспитатель с <strong>12-летним опытом работы</strong> с детьми дошкольного возраста. Моя главная цель — создать для каждого ребёнка атмосферу любви, безопасности и радости познания.
+                Я воспитатель с <strong>20-летним опытом работы</strong> с детьми дошкольного возраста. Моя главная цель — создать для каждого ребёнка атмосферу любви, безопасности и радости познания.
               </p>
               <p className="text-gray-600 leading-relaxed">
                 Работаю по авторской методике, сочетающей игровое обучение, творчество и развитие эмоционального интеллекта. Верю, что счастливый ребёнок — это успешный ребёнок.
@@ -376,10 +376,10 @@ export default function Index() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
               {[
-                { icon: "Phone", label: "Телефон", value: "+7 (999) 123-45-67", color: "bg-kidz-green/20 text-kidz-green" },
-                { icon: "Mail", label: "Email", value: "anna.petrova@mail.ru", color: "bg-kidz-blue/20 text-kidz-blue" },
-                { icon: "MapPin", label: "Адрес", value: "МБДОУ «Солнышко», ул. Ленина, 15", color: "bg-kidz-orange/20 text-kidz-orange" },
-                { icon: "Clock", label: "Время работы", value: "Пн–Пт, 8:00–18:00", color: "bg-kidz-purple/20 text-kidz-purple" },
+                { icon: "Phone", label: "Телефон", value: "+7 (953) 861-20-47", color: "bg-kidz-green/20 text-kidz-green" },
+                { icon: "Mail", label: "Email", value: "govorova.73@inbox.ru", color: "bg-kidz-blue/20 text-kidz-blue" },
+                { icon: "MapPin", label: "Адрес", value: "Новосибирск, ул. Ереванская, 9, МБДОУ д/с №272", color: "bg-kidz-orange/20 text-kidz-orange" },
+                { icon: "Clock", label: "Время работы", value: "Пн–Пт, 7:00–14:00 / 13:00–19:00", color: "bg-kidz-purple/20 text-kidz-purple" },
               ].map((contact) => (
                 <div key={contact.label} className="flex items-center gap-4 bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow">
                   <div className={`${contact.color} w-10 h-10 rounded-xl flex items-center justify-center`}>
@@ -421,7 +421,7 @@ export default function Index() {
 
       {/* FOOTER */}
       <footer className="relative z-10 bg-gray-800 text-white py-8 px-4 text-center">
-        <div className="font-pacifico text-2xl text-kidz-yellow mb-2">🌈 Анна Петрова</div>
+        <div className="font-pacifico text-2xl text-kidz-yellow mb-2">🌈 Мария Говорова</div>
         <div className="text-gray-400 text-sm">Воспитатель высшей категории · Растим счастливых детей</div>
         <div className="text-gray-600 text-xs mt-4">© 2024 Все права защищены</div>
       </footer>

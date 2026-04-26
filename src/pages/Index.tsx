@@ -349,7 +349,7 @@ export default function Index() {
         <div className="max-w-6xl mx-auto">
           <SectionTitle emoji="🏆" title="Достижения детей" color="text-kidz-yellow" />
           <p className="text-center text-gray-500 mt-2 mb-10">Гордость нашей группы — успехи каждого ребёнка</p>
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="grid md:grid-cols-3 gap-5 mb-10">
             {ACHIEVEMENTS.map((child, i) => (
               <div
                 key={i}
@@ -365,6 +365,15 @@ export default function Index() {
                 <p className="text-gray-600 text-sm leading-relaxed">{child.achievement}</p>
               </div>
             ))}
+          </div>
+          {/* Diplomas */}
+          <div className="bg-kidz-cream rounded-3xl p-6">
+            <div className="font-bold text-gray-800 text-center text-lg mb-5">🚀 Дипломы конкурса «Космос загадочный и бесконечный»</div>
+            <img
+              src="https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/00a36415-2577-48e7-a2e2-1ab0b078a448.jpg"
+              alt="Дипломы конкурса поделок ко Дню Космонавтики"
+              className="w-full rounded-2xl shadow-lg hover:scale-[1.01] transition-transform cursor-zoom-in"
+            />
           </div>
           <div className="text-center mt-10">
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-kidz-yellow to-kidz-orange text-white font-bold px-8 py-4 rounded-3xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 cursor-pointer">

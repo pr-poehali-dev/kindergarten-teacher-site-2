@@ -162,14 +162,8 @@ export default function Index() {
             </p>
             <div className="flex flex-wrap gap-3 justify-center md:justify-start">
               <button
-                onClick={() => scrollTo("contacts")}
-                className="bg-kidz-orange text-white font-bold px-6 py-3 rounded-2xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200"
-              >
-                Записаться на занятие
-              </button>
-              <button
                 onClick={() => scrollTo("gallery")}
-                className="bg-white text-kidz-orange font-bold px-6 py-3 rounded-2xl border-2 border-kidz-orange shadow hover:scale-105 hover:bg-kidz-orange/5 transition-all duration-200"
+                className="bg-kidz-orange text-white font-bold px-6 py-3 rounded-2xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200"
               >
                 Смотреть галерею
               </button>

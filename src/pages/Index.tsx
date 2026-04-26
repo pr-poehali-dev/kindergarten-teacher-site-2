@@ -485,7 +485,7 @@ export default function Index() {
               🎓 Воспитатель 1 квалификационной категории
             </div>
             <h1 className="font-pacifico text-5xl md:text-6xl text-gray-800 leading-tight mb-4">
-              Привет!<br />
+              Здравствуйте!<br />
               <span className="text-kidz-orange">Я Мария Михайловна</span> ☀️
             </h1>
             <p className="text-lg text-gray-600 mb-8 max-w-md leading-relaxed">

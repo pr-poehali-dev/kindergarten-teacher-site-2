@@ -195,6 +195,11 @@ const NEWS = [
     color: "bg-kidz-yellow",
     title: "День смеха и юмора",
     text: "Провели весёлый день с розыгрышами, смешными загадками и конкурсом на лучшую улыбку. Смех — лучшее лекарство, и наши дети это точно знают!",
+    photos: [
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/30252e32-a630-4d21-bfe5-d7be5a0040ee.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/fd40985a-e513-4236-b6e3-9ca45bbbad1e.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/60c85178-cb01-4d9b-9197-36a62fd29448.jpg",
+    ],
   },
 ];
 

@@ -59,10 +59,11 @@ const ACHIEVEMENTS = [
 const GALLERY_ITEMS = [
   { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/8cd61219-ca6d-4ddc-b263-d4952d5e8a5a.jpg", label: "Занятие по рисованию", color: "bg-kidz-pink" },
   { emoji: "🧸", label: "Игровое время", color: "bg-kidz-blue" },
-  { emoji: "🎭", label: "Театральная постановка", color: "bg-kidz-purple" },
-  { emoji: "🌿", label: "Прогулка на природе", color: "bg-kidz-green" },
-  { emoji: "📚", label: "Чтение сказок", color: "bg-kidz-yellow" },
-  { emoji: "🎵", label: "Музыкальное занятие", color: "bg-kidz-orange" },
+  { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/6cc21e0f-0cf1-4e06-a008-f84b7ad16b6d.jpg", label: "Поделка «Победа 1941–1945»", color: "bg-kidz-red" },
+  { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/c98b6c70-4225-4910-94b7-5bfc4f17f731.jpg", label: "Поделка «9 Мая»", color: "bg-kidz-purple" },
+  { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/70d85b16-7a06-4982-b075-776355b296c3.jpg", label: "Поделка «Вечный огонь»", color: "bg-kidz-orange" },
+  { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/c61b5ba4-3889-4f82-b479-a36f9e68ce2b.jpg", label: "Поделка «9 Мая — цветы»", color: "bg-kidz-green" },
+  { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/709d02fc-a14a-4c54-be61-d13ed310c4a1.jpg", label: "Поделка «Гармонь с цветами»", color: "bg-kidz-pink" },
 ];
 
 function SectionTitle({ emoji, title, color }: { emoji: string; title: string; color: string }) {

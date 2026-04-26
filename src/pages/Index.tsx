@@ -158,6 +158,17 @@ const ARTICLES = [
 
 const NEWS = [
   {
+    date: "26 апреля 2026",
+    emoji: "🧹",
+    color: "bg-kidz-green",
+    title: "Весенний субботник на территории сада",
+    text: "Провели дружный субботник на участке! Убрали прошлогодние листья, облагородили территорию и подготовили площадку к тёплому сезону. Спасибо всем, кто вышел помочь!",
+    photos: [
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/e395c1fb-5ff4-49cd-942b-67901f56f260.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/ca5fba41-5c9b-440d-8749-424569eedb72.jpg",
+    ],
+  },
+  {
     date: "25 апреля 2026",
     emoji: "🌸",
     color: "bg-kidz-pink",
@@ -418,6 +429,13 @@ export default function Index() {
                 </div>
                 <h3 className="font-bold text-gray-800 text-base mb-2 leading-tight">{item.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{item.text}</p>
+                {'photos' in item && item.photos && (
+                  <div className="grid grid-cols-2 gap-2 mt-4">
+                    {item.photos.map((src, pi) => (
+                      <img key={pi} src={src} alt="" className="rounded-2xl w-full h-36 object-cover hover:scale-[1.02] transition-transform cursor-zoom-in" />
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>

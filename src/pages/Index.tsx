@@ -169,6 +169,17 @@ const NEWS = [
     ],
   },
   {
+    date: "18 апреля 2026",
+    emoji: "🌱",
+    color: "bg-kidz-green",
+    title: "Огород на подоконнике",
+    text: "Посадили лук и наблюдаем за ростом! Дети с удовольствием поливают растения и следят за каждым новым листочком. Наш мини-огород уже радует первыми всходами!",
+    photos: [
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/6debbf20-b4f0-43d7-b9ab-24fc52f2f7ab.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/ae9e69bf-4883-42be-9cf5-19a22ff655de.jpg",
+    ],
+  },
+  {
     date: "25 апреля 2026",
     emoji: "🌸",
     color: "bg-kidz-pink",
@@ -227,15 +238,7 @@ const GALLERY_GROUPS = [
       { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/88149f49-a9c3-4149-84b6-5ac095c1e90e.jpg", label: "Занятие по сказкам у доски" },
     ],
   },
-  {
-    title: "Огород на подоконнике",
-    emoji: "🌱",
-    color: "text-kidz-green",
-    items: [
-      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/6debbf20-b4f0-43d7-b9ab-24fc52f2f7ab.jpg", label: "Поливаем растения" },
-      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/ae9e69bf-4883-42be-9cf5-19a22ff655de.jpg", label: "Сажаем лук" },
-    ],
-  },
+
   {
     title: "Космос",
     emoji: "🚀",

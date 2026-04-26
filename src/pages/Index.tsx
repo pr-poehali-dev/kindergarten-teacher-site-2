@@ -212,6 +212,7 @@ export default function Index() {
               </p>
               <div className="grid grid-cols-2 gap-3 mt-6">
                 {[
+                  { emoji: "🏫", text: "МБДОУ Детский сад №272" },
                   { emoji: "🎓", text: "Новосибирское педагогическое училище №2" },
                   { emoji: "📜", text: "Учитель начальных классов" },
                   { emoji: "🏅", text: "1 квалификационная категория" },

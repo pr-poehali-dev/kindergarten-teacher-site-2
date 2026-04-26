@@ -227,6 +227,20 @@ export default function Index() {
                   </div>
                 ))}
               </div>
+              {/* Personal diploma */}
+              <div className="mt-6">
+                <div className="font-bold text-gray-700 text-sm mb-3">🏆 Мои награды</div>
+                <div className="bg-kidz-cream rounded-2xl overflow-hidden shadow hover:shadow-lg transition-shadow">
+                  <img
+                    src="https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/a7962476-bb68-4a7f-b4cc-3177d1ac940f.jpg"
+                    alt="Диплом победителя — Солнечный свет, 1 место"
+                    className="w-full object-cover hover:scale-[1.02] transition-transform cursor-zoom-in"
+                  />
+                  <div className="px-4 py-3 text-xs text-gray-500 font-semibold">
+                    🥇 Победитель Всероссийского конкурса «Космонавтика» — портал «Солнечный свет», 2026
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[

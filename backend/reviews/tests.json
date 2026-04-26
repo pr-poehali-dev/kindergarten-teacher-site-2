@@ -1,0 +1,17 @@
+{
+  "tests": [
+    {
+      "name": "Получить одобренные отзывы",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Добавить отзыв",
+      "method": "POST",
+      "path": "/",
+      "body": {"name": "Тестовый родитель", "text": "Отличный воспитатель!", "rating": 5},
+      "expectedStatus": 201
+    }
+  ]
+}

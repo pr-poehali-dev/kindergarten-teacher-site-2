@@ -220,7 +220,6 @@ export default function Index() {
                   { emoji: "🎓", text: "Новосибирское педагогическое училище №2" },
                   { emoji: "📜", text: "Учитель начальных классов" },
                   { emoji: "🏅", text: "1 квалификационная категория" },
-                  { emoji: "🌍", text: "Автор методик" },
                 ].map((item) => (
                   <div key={item.text} className="flex items-center gap-2 bg-kidz-cream rounded-xl p-3 font-semibold text-sm text-gray-700">
                     <span className="text-2xl">{item.emoji}</span>

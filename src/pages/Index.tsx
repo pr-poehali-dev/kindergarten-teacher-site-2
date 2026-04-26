@@ -391,7 +391,7 @@ export default function Index() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
               {[
-                { icon: "Phone", label: "Телефон", value: "+7 (953) 861-20-47", color: "bg-kidz-green/20 text-kidz-green" },
+                { icon: "Phone", label: "Телефон", value: "+7 (953) 861-20-46", color: "bg-kidz-green/20 text-kidz-green" },
                 { icon: "Mail", label: "Email", value: "govorova.73@inbox.ru", color: "bg-kidz-blue/20 text-kidz-blue" },
                 { icon: "MapPin", label: "Адрес", value: "Новосибирск, ул. Ереванская, 9, МБДОУ д/с №272", color: "bg-kidz-orange/20 text-kidz-orange" },
                 { icon: "Clock", label: "Время работы", value: "Пн–Пт, 7:00–14:00 / 13:00–19:00", color: "bg-kidz-purple/20 text-kidz-purple" },

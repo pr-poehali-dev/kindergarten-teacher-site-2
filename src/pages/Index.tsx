@@ -332,6 +332,27 @@ export default function Index() {
               className="w-full rounded-2xl shadow-lg hover:scale-[1.01] transition-transform cursor-zoom-in"
             />
           </div>
+          <div className="mt-12">
+            <div className="font-bold text-gray-800 text-center text-lg mb-6">🏅 Награды педагога</div>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {[
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/455e9566-a48f-440a-b700-df5d69bd133f.jpg", label: "Диплом I степени ЦРТИ «ПАРТА» — «Век за веком рядом с человеком»" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/39346b22-1b06-41f4-a67b-050037c62969.jpg", label: "Диплом лауреата I степени — «Талант педагога», олимпиада ФГОС" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/784c677a-de34-4182-9f41-c2a96fdcd483.jpg", label: "Почётная грамота — Администрация Центрального округа г. Новосибирска" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/f6f45dfc-d87f-44ec-8d0e-5ede4e47c8e9.jpg", label: "Благодарственное письмо — «Педталант», конкурс «Сценарий спортивного праздника»" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/098e8390-43ff-4e6f-bb4f-d20ef852e198.jpg", label: "Грамота — МБДОУ Детский сад №272, развитие речи 2022–2023" },
+              ].map((award, i) => (
+                <div key={i} className="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group">
+                  <div className="relative overflow-hidden">
+                    <img src={award.src} alt={award.label} className="w-full h-52 object-cover object-top group-hover:scale-105 transition-transform duration-300" />
+                  </div>
+                  <div className="p-3">
+                    <p className="text-xs text-gray-600 leading-snug font-medium">{award.label}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
           <div className="text-center mt-10">
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-kidz-yellow to-kidz-orange text-white font-bold px-8 py-4 rounded-3xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 cursor-pointer">
               <span className="text-xl">🌟</span>

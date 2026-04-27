@@ -9,6 +9,7 @@ export default function Index() {
   const [activeSection, setActiveSection] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
   const [openArticle, setOpenArticle] = useState<typeof ARTICLES[0] | null>(null);
+  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
 
   const scrollTo = (id: string) => {
     setActiveSection(id);
@@ -336,15 +337,32 @@ export default function Index() {
             <div className="font-bold text-gray-800 text-center text-lg mb-6">🏅 Награды педагога</div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {[
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/8e63fb18-c1cb-498b-bc02-91b795680803.jpg", label: "Диплом лауреата I степени — VI Всероссийский конкурс «Надежды России», 2026" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/5d48b5fe-b743-4869-a0de-32d440597c97.jpg", label: "Благодарность за подготовку победителей — конкурс «Новогоднее счастье», «Звёздочка наша», 2026" },
                 { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/455e9566-a48f-440a-b700-df5d69bd133f.jpg", label: "Диплом I степени ЦРТИ «ПАРТА» — «Век за веком рядом с человеком»" },
                 { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/39346b22-1b06-41f4-a67b-050037c62969.jpg", label: "Диплом лауреата I степени — «Талант педагога», олимпиада ФГОС" },
-                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/784c677a-de34-4182-9f41-c2a96fdcd483.jpg", label: "Почётная грамота — Администрация Центрального округа г. Новосибирска" },
-                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/f6f45dfc-d87f-44ec-8d0e-5ede4e47c8e9.jpg", label: "Благодарственное письмо — «Педталант», конкурс «Сценарий спортивного праздника»" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/69179d1e-05c8-4a76-bb2e-6e235387d5e1.jpg", label: "Диплом победителя (1 место) — Международный конкурс «Лучший проект воспитателя», «Солнечный свет»" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/da3db21b-45ee-47ea-a4df-c4016cb63f76.jpg", label: "Диплом II степени — Общероссийский конкурс «Лучший сценарий мероприятия», «Магистр», 2017" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/784c677a-de34-4182-9f41-c2a96fdcd483.jpg", label: "Почётная грамота — Администрация Центрального округа г. Новосибирска, 2020" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/cc52f2fa-ca2e-4a46-a16c-5d7439b6b332.jpg", label: "Почётная грамота — Администрация Центрального округа г. Новосибирска, 2018" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/67b5a89c-0df1-497a-a42a-b300a1968c04.jpg", label: "Почётная грамота — МБДОУ Детский сад №272, всестороннее развитие детей, 2023–2024" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/93092299-a639-48a0-9438-b786360452a3.jpg", label: "Почётная грамота — МБДОУ Детский сад №272, День работников дошкольного образования" },
                 { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/098e8390-43ff-4e6f-bb4f-d20ef852e198.jpg", label: "Грамота — МБДОУ Детский сад №272, развитие речи 2022–2023" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/1be59866-f3dc-4673-b1f2-a57e8860e398.jpg", label: "Грамота — МБДОУ Детский сад №272, добросовестный труд, 2025" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/f6f45dfc-d87f-44ec-8d0e-5ede4e47c8e9.jpg", label: "Благодарственное письмо — «Педталант», конкурс «Сценарий спортивного праздника»" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/eaa8cfbf-625b-41d8-b6e2-d022f0633a71.jpg", label: "Благодарственное письмо — Всероссийское общество охраны природы, 2017–2018" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/03508ad2-bbca-4c8f-ad6d-59176631151d.jpg", label: "Благодарственное письмо — Администрация Центрального округа г. Новосибирска, 2018" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/12a3df9a-5f56-4464-9bb4-135fe4bd754c.jpg", label: "Благодарственное письмо — номинация «Первый наставник», выпускники группы №2 «Сказка», 2017" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/e63836a8-21a1-4948-a692-fba3a17bbd6a.jpg", label: "Грамота — Первичная организация Профсоюза, плодотворная работа в деле воспитания детей" },
               ].map((award, i) => (
-                <div key={i} className="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group">
+                <div key={i} onClick={() => setLightboxSrc(award.src)} className="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group cursor-zoom-in">
                   <div className="relative overflow-hidden">
                     <img src={award.src} alt={award.label} className="w-full h-52 object-cover object-top group-hover:scale-105 transition-transform duration-300" />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center">
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 rounded-full p-2 shadow-lg">
+                        <Icon name="ZoomIn" size={18} />
+                      </div>
+                    </div>
                   </div>
                   <div className="p-3">
                     <p className="text-xs text-gray-600 leading-snug font-medium">{award.label}</p>
@@ -425,6 +443,15 @@ export default function Index() {
 
     {openArticle && (
       <ArticleModal article={openArticle} onClose={() => setOpenArticle(null)} />
+    )}
+
+    {lightboxSrc && (
+      <div className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4" onClick={() => setLightboxSrc(null)}>
+        <button onClick={() => setLightboxSrc(null)} className="absolute top-4 right-4 bg-white/20 hover:bg-white/40 text-white rounded-full p-2 transition-colors">
+          <Icon name="X" size={24} />
+        </button>
+        <img src={lightboxSrc} alt="Диплом" className="max-w-full max-h-[90vh] rounded-2xl shadow-2xl object-contain" onClick={(e) => e.stopPropagation()} />
+      </div>
     )}
     </>
   );

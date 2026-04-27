@@ -333,6 +333,34 @@ export default function Index() {
               className="w-full rounded-2xl shadow-lg hover:scale-[1.01] transition-transform cursor-zoom-in"
             />
           </div>
+
+          <div className="bg-kidz-cream rounded-3xl p-6 mt-6">
+            <div className="font-bold text-gray-800 text-center text-lg mb-2">🌸 Дипломы конкурса «Весенний подарок», 2026</div>
+            <p className="text-center text-gray-500 text-sm mb-5">Региональный конкурс Новосибирской области — 1 место</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/9bb35b0c-2d8b-4c76-82b6-5d4c09202e16.jpg", name: "Северова Настя, 4 года" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/257afd76-ac4d-45ca-8490-1a66bbc04538.jpg", name: "Сердюцкий Ваня, 4 года" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/36f1d09a-de63-4ed9-8f5d-7caff399687c.jpg", name: "Чурсина Алеса, 4 года" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/1007c95c-2603-47e2-9dd9-af8b37d36f14.jpg", name: "Беликова Эмилия, 4 года" },
+              ].map((child, i) => (
+                <div key={i} onClick={() => setLightboxSrc(child.src)} className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group cursor-zoom-in">
+                  <div className="relative overflow-hidden">
+                    <img src={child.src} alt={child.name} className="w-full h-48 object-cover object-top group-hover:scale-105 transition-transform duration-300" />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center">
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 rounded-full p-2 shadow-lg">
+                        <Icon name="ZoomIn" size={16} />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-3 text-center">
+                    <p className="text-xs font-semibold text-gray-700">🥇 1 место</p>
+                    <p className="text-xs text-gray-500 mt-0.5">{child.name}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
           <div className="mt-12">
             <div className="font-bold text-gray-800 text-center text-lg mb-6">🏅 Награды педагога</div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">

@@ -343,6 +343,9 @@ export default function Index() {
                 { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/257afd76-ac4d-45ca-8490-1a66bbc04538.jpg", name: "Сердюцкий Ваня, 4 года" },
                 { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/36f1d09a-de63-4ed9-8f5d-7caff399687c.jpg", name: "Чурсина Алеса, 4 года" },
                 { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/1007c95c-2603-47e2-9dd9-af8b37d36f14.jpg", name: "Беликова Эмилия, 4 года" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/f3615adc-fe87-4624-bb34-96ee52d77049.jpg", name: "Буренкова Есения, 4 года" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/456da038-4653-460f-8161-893a1006e2b4.jpg", name: "Финагина Майя, 4 года" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/32f86fba-733c-4de1-b404-21134a701173.jpg", name: "Екимов Серёжа, 4 года" },
               ].map((child, i) => (
                 <div key={i} onClick={() => setLightboxSrc(child.src)} className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group cursor-zoom-in">
                   <div className="relative overflow-hidden">

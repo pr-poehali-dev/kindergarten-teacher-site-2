@@ -449,6 +449,36 @@ export default function Index() {
         </div>
       </section>
 
+      {/* DOCUMENTS */}
+      <section id="documents" className="relative z-10 py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <SectionTitle emoji="📄" title="Мои документы" color="text-kidz-blue" />
+          <p className="text-center text-gray-500 mt-2 mb-10">Образование и повышение квалификации</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/726e482c-ab44-48a0-b0f6-24f185c545d7.jpg", label: "Диплом — Новосибирское педагогическое училище №2, специальность «Преподавание в начальных классах», 1992" },
+              { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/831b290e-b82d-4602-8143-1e33dacfeae1.jpg", label: "Удостоверение о повышении квалификации — НИПКиПРО, программа «Особенности коррекционной составляющей процесса обучения», 72 ч., 2018" },
+              { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/62cad755-aa8e-4ae6-9898-ce5df58c4d04.jpg", label: "Удостоверение о повышении квалификации — НИПКиПРО, программа «Взаимодействие ДОУ и семьи в контексте ФГОС ДО», 36 ч., 2016" },
+              { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/0a03d606-a04c-4677-b959-11d0c256110d.jpg", label: "Удостоверение о повышении квалификации — НИПКиПРО, программа «Речевое творчество и детский театр в ДОО», 72 ч., 2023" },
+            ].map((doc, i) => (
+              <div key={i} onClick={() => setLightboxSrc(doc.src)} className="bg-gray-50 rounded-3xl overflow-hidden shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group cursor-zoom-in">
+                <div className="relative overflow-hidden">
+                  <img src={doc.src} alt={doc.label} className="w-full h-52 object-cover object-top group-hover:scale-105 transition-transform duration-300" />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 rounded-full p-2 shadow-lg">
+                      <Icon name="ZoomIn" size={18} />
+                    </div>
+                  </div>
+                </div>
+                <div className="p-3">
+                  <p className="text-xs text-gray-600 leading-snug font-medium">{doc.label}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FOOTER */}
       <footer className="relative z-10 bg-gray-800 text-white py-8 px-4 text-center">
         <div className="font-pacifico text-2xl text-kidz-yellow mb-2">🌈 Говорова Мария Михайловна</div>

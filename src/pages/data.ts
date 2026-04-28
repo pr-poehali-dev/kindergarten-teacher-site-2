@@ -8,6 +8,7 @@ export const NAV_ITEMS = [
   { id: "articles", label: "Статьи" },
   { id: "schedule", label: "Расписание" },
   { id: "achievements", label: "Достижения" },
+  { id: "documents", label: "Документы" },
   { id: "reviews", label: "Отзывы" },
   { id: "contacts", label: "Контакты" },
 ];

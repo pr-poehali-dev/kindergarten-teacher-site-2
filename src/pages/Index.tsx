@@ -3,7 +3,7 @@ import Icon from "@/components/ui/icon";
 import SectionTitle from "@/components/SectionTitle";
 import ArticleModal from "@/components/ArticleModal";
 import ReviewsSection from "@/components/ReviewsSection";
-import { NAV_ITEMS, ARTICLES, NEWS, SCHEDULE, ACHIEVEMENTS, GALLERY_GROUPS } from "@/pages/data";
+import { NAV_ITEMS, ARTICLES, NEWS, SCHEDULE, ACHIEVEMENTS, GALLERY_GROUPS, ACTIVITIES } from "@/pages/data";
 
 export default function Index() {
   const [activeSection, setActiveSection] = useState("home");
@@ -352,6 +352,28 @@ export default function Index() {
               <div className="font-bold text-gray-800">Дополнительные мероприятия</div>
               <div className="text-gray-600 text-sm mt-1">Каждую последнюю пятницу месяца проводятся праздники и открытые занятия для родителей. Следите за анонсами!</div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ACTIVITIES */}
+      <section id="activities" className="relative z-10 py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <SectionTitle emoji="🌟" title="Наши занятия" color="text-kidz-green" />
+          <p className="text-center text-gray-500 mt-2 mb-10">Всестороннее развитие каждого ребёнка</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {ACTIVITIES.map((act, i) => (
+              <div
+                key={i}
+                className="bg-kidz-cream rounded-3xl p-5 hover:shadow-xl hover:scale-[1.03] transition-all duration-300 flex flex-col gap-3"
+              >
+                <div className={`${act.color} w-14 h-14 rounded-2xl flex items-center justify-center text-3xl shadow-md`}>
+                  {act.emoji}
+                </div>
+                <div className="font-bold text-gray-800 text-base leading-tight">{act.title}</div>
+                <div className="text-xs text-gray-500 leading-relaxed">{act.desc}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

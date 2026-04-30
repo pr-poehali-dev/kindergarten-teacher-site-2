@@ -16,8 +16,11 @@ export default function Index() {
     const doc = new jsPDF({ orientation: "landscape", unit: "mm", format: "a4" });
 
     const pageW = doc.internal.pageSize.getWidth();
+    const pageH = doc.internal.pageSize.getHeight();
     const margin = 14;
     const colW = (pageW - margin * 2) / 5;
+
+    const photoUrl = "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/f22a45c6-3e68-4279-9065-e0f189722923.jpg";
 
     const dayColors: [number, number, number][] = [
       [255, 138, 166],
@@ -27,60 +30,106 @@ export default function Index() {
       [255, 167, 38],
     ];
 
-    doc.setFont("helvetica", "bold");
-    doc.setFontSize(16);
-    doc.setTextColor(60, 60, 60);
-    doc.text("Raspisanie zanyatiy — Gruppa №7 «Rucheek»", pageW / 2, 14, { align: "center" });
-    doc.setFontSize(10);
-    doc.setFont("helvetica", "normal");
-    doc.setTextColor(130, 130, 130);
-    doc.text("Srednyaya gruppa", pageW / 2, 20, { align: "center" });
+    const renderPDF = (photoDataUrl?: string) => {
+      doc.setFillColor(255, 251, 245);
+      doc.rect(0, 0, pageW, pageH, "F");
 
-    SCHEDULE.forEach((day, i) => {
-      const x = margin + i * colW;
-      const [r, g, b] = dayColors[i];
+      const photoSize = 18;
+      const photoX = margin;
+      const photoY = 5;
 
-      doc.setFillColor(r, g, b);
-      doc.roundedRect(x, 26, colW - 3, 12, 3, 3, "F");
-      doc.setTextColor(255, 255, 255);
+      if (photoDataUrl) {
+        doc.addImage(photoDataUrl, "JPEG", photoX, photoY, photoSize, photoSize);
+        doc.setDrawColor(255, 167, 38);
+        doc.setLineWidth(0.8);
+        doc.circle(photoX + photoSize / 2, photoY + photoSize / 2, photoSize / 2 + 0.5);
+      }
+
+      const textX = photoDataUrl ? photoX + photoSize + 5 : margin;
+
       doc.setFont("helvetica", "bold");
-      doc.setFontSize(10);
-      doc.text(day.day, x + (colW - 3) / 2, 34, { align: "center" });
+      doc.setFontSize(15);
+      doc.setTextColor(60, 60, 60);
+      doc.text("Raspisanie zanyatiy", textX, 12);
 
-      let y = 42;
-      day.items.forEach((item) => {
-        doc.setFillColor(248, 248, 248);
-        const blockH = item.sub ? 18 : 14;
-        doc.roundedRect(x, y, colW - 3, blockH, 2, 2, "F");
+      doc.setFontSize(9);
+      doc.setFont("helvetica", "normal");
+      doc.setTextColor(255, 138, 100);
+      doc.text("Gruppa №7 «Rucheek» — Srednyaya gruppa", textX, 18);
 
-        doc.setTextColor(150, 150, 150);
+      doc.setFont("helvetica", "italic");
+      doc.setFontSize(8);
+      doc.setTextColor(150, 150, 150);
+      doc.text("Govоrova Mariya Mikhaylovna", textX, 23);
+
+      const tableStartY = 30;
+
+      SCHEDULE.forEach((day, i) => {
+        const x = margin + i * colW;
+        const [r, g, b] = dayColors[i];
+
+        doc.setFillColor(r, g, b);
+        doc.roundedRect(x, tableStartY, colW - 3, 11, 3, 3, "F");
+        doc.setTextColor(255, 255, 255);
         doc.setFont("helvetica", "bold");
-        doc.setFontSize(7);
-        doc.text(item.time, x + 3, y + 5);
+        doc.setFontSize(9);
+        doc.text(day.day, x + (colW - 3) / 2, tableStartY + 7.5, { align: "center" });
 
-        doc.setTextColor(50, 50, 50);
-        doc.setFont("helvetica", "bold");
-        doc.setFontSize(8);
-        const lines = doc.splitTextToSize(item.title, colW - 8);
-        doc.text(lines, x + 3, y + 10);
+        let y = tableStartY + 14;
+        day.items.forEach((item) => {
+          const blockH = item.sub ? 18 : 14;
+          doc.setFillColor(255, 255, 255);
+          doc.roundedRect(x, y, colW - 3, blockH, 2, 2, "F");
+          doc.setDrawColor(r, g, b);
+          doc.setLineWidth(0.3);
+          doc.roundedRect(x, y, colW - 3, blockH, 2, 2, "S");
 
-        if (item.sub) {
-          doc.setTextColor(170, 170, 170);
-          doc.setFont("helvetica", "italic");
-          doc.setFontSize(7);
-          doc.text(item.sub, x + 3, y + blockH - 2);
-        }
+          doc.setTextColor(r * 0.8, g * 0.8, b * 0.8);
+          doc.setFont("helvetica", "bold");
+          doc.setFontSize(6.5);
+          doc.text(item.time, x + 3, y + 5);
 
-        y += blockH + 2;
+          doc.setTextColor(50, 50, 50);
+          doc.setFont("helvetica", "bold");
+          doc.setFontSize(7.5);
+          const lines = doc.splitTextToSize(item.title, colW - 8);
+          doc.text(lines, x + 3, y + 10);
+
+          if (item.sub) {
+            doc.setTextColor(170, 170, 170);
+            doc.setFont("helvetica", "italic");
+            doc.setFontSize(6.5);
+            doc.text(item.sub, x + 3, y + blockH - 2);
+          }
+
+          y += blockH + 2;
+        });
       });
-    });
 
-    doc.setTextColor(170, 170, 170);
-    doc.setFont("helvetica", "normal");
-    doc.setFontSize(8);
-    doc.text("mariya-govorova.ru", pageW / 2, doc.internal.pageSize.getHeight() - 6, { align: "center" });
+      doc.setTextColor(200, 200, 200);
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(7);
+      doc.text("mariya-govorova.ru", pageW / 2, pageH - 4, { align: "center" });
 
-    doc.save("raspisanie-rucheek.pdf");
+      doc.save("raspisanie-rucheek.pdf");
+    };
+
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+    img.onload = () => {
+      const canvas = document.createElement("canvas");
+      canvas.width = img.width;
+      canvas.height = img.height;
+      const ctx = canvas.getContext("2d");
+      if (ctx) {
+        ctx.drawImage(img, 0, 0);
+        renderPDF(canvas.toDataURL("image/jpeg"));
+      } else {
+        renderPDF();
+      }
+    };
+    img.onerror = () => renderPDF();
+    img.src = photoUrl;
   };
 
   const scrollTo = (id: string) => {

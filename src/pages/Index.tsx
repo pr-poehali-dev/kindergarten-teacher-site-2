@@ -4,12 +4,84 @@ import SectionTitle from "@/components/SectionTitle";
 import ArticleModal from "@/components/ArticleModal";
 import ReviewsSection from "@/components/ReviewsSection";
 import { NAV_ITEMS, ARTICLES, NEWS, SCHEDULE, ACHIEVEMENTS, GALLERY_GROUPS, ACTIVITIES } from "@/pages/data";
+import { jsPDF } from "jspdf";
 
 export default function Index() {
   const [activeSection, setActiveSection] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
   const [openArticle, setOpenArticle] = useState<typeof ARTICLES[0] | null>(null);
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
+
+  const downloadSchedulePDF = () => {
+    const doc = new jsPDF({ orientation: "landscape", unit: "mm", format: "a4" });
+
+    const pageW = doc.internal.pageSize.getWidth();
+    const margin = 14;
+    const colW = (pageW - margin * 2) / 5;
+
+    const dayColors: [number, number, number][] = [
+      [255, 138, 166],
+      [100, 181, 246],
+      [102, 187, 106],
+      [186, 104, 200],
+      [255, 167, 38],
+    ];
+
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(16);
+    doc.setTextColor(60, 60, 60);
+    doc.text("Raspisanie zanyatiy — Gruppa №7 «Rucheek»", pageW / 2, 14, { align: "center" });
+    doc.setFontSize(10);
+    doc.setFont("helvetica", "normal");
+    doc.setTextColor(130, 130, 130);
+    doc.text("Srednyaya gruppa", pageW / 2, 20, { align: "center" });
+
+    SCHEDULE.forEach((day, i) => {
+      const x = margin + i * colW;
+      const [r, g, b] = dayColors[i];
+
+      doc.setFillColor(r, g, b);
+      doc.roundedRect(x, 26, colW - 3, 12, 3, 3, "F");
+      doc.setTextColor(255, 255, 255);
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(10);
+      doc.text(day.day, x + (colW - 3) / 2, 34, { align: "center" });
+
+      let y = 42;
+      day.items.forEach((item) => {
+        doc.setFillColor(248, 248, 248);
+        const blockH = item.sub ? 18 : 14;
+        doc.roundedRect(x, y, colW - 3, blockH, 2, 2, "F");
+
+        doc.setTextColor(150, 150, 150);
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(7);
+        doc.text(item.time, x + 3, y + 5);
+
+        doc.setTextColor(50, 50, 50);
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(8);
+        const lines = doc.splitTextToSize(item.title, colW - 8);
+        doc.text(lines, x + 3, y + 10);
+
+        if (item.sub) {
+          doc.setTextColor(170, 170, 170);
+          doc.setFont("helvetica", "italic");
+          doc.setFontSize(7);
+          doc.text(item.sub, x + 3, y + blockH - 2);
+        }
+
+        y += blockH + 2;
+      });
+    });
+
+    doc.setTextColor(170, 170, 170);
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(8);
+    doc.text("mariya-govorova.ru", pageW / 2, doc.internal.pageSize.getHeight() - 6, { align: "center" });
+
+    doc.save("raspisanie-rucheek.pdf");
+  };
 
   const scrollTo = (id: string) => {
     setActiveSection(id);
@@ -326,7 +398,16 @@ export default function Index() {
       <section id="schedule" className="relative z-10 py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <SectionTitle emoji="📅" title="Расписание занятий" color="text-kidz-orange" />
-          <p className="text-center text-gray-500 mt-2 mb-10">Группа №7 «Ручеёк» — Средняя группа</p>
+          <p className="text-center text-gray-500 mt-2 mb-4">Группа №7 «Ручеёк» — Средняя группа</p>
+          <div className="flex justify-center mb-8">
+            <button
+              onClick={downloadSchedulePDF}
+              className="flex items-center gap-2 bg-kidz-orange text-white font-bold px-5 py-2.5 rounded-2xl shadow-md hover:scale-105 hover:shadow-lg transition-all duration-200"
+            >
+              <Icon name="Download" size={18} />
+              Скачать расписание (PDF)
+            </button>
+          </div>
           <div className="grid md:grid-cols-5 gap-4">
             {SCHEDULE.map((day, i) => (
               <div

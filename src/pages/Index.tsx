@@ -326,20 +326,23 @@ export default function Index() {
       <section id="schedule" className="relative z-10 py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <SectionTitle emoji="📅" title="Расписание занятий" color="text-kidz-orange" />
-          <p className="text-center text-gray-500 mt-2 mb-10">Актуальное расписание на неделю</p>
+          <p className="text-center text-gray-500 mt-2 mb-10">Группа №7 «Ручеёк» — Средняя группа</p>
           <div className="grid md:grid-cols-5 gap-4">
             {SCHEDULE.map((day, i) => (
               <div
                 key={i}
                 className="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
               >
-                <div className={`${day.color} px-4 py-3 text-white font-bold text-center text-sm`}>
-                  {day.day}
+                <div className={`${day.color} px-4 py-4 text-white font-bold text-center`}>
+                  <div className="text-2xl mb-1">{day.emoji}</div>
+                  <div className="text-sm">{day.day}</div>
                 </div>
-                <div className="p-4 space-y-2">
+                <div className="p-3 space-y-2">
                   {day.items.map((item, j) => (
-                    <div key={j} className="text-xs text-gray-600 bg-gray-50 rounded-xl p-2 leading-tight">
-                      {item}
+                    <div key={j} className="bg-gray-50 rounded-2xl p-3">
+                      <div className="text-[10px] font-bold text-gray-400 mb-0.5">{item.time}</div>
+                      <div className="text-xs font-semibold text-gray-800 leading-tight">{item.title}</div>
+                      {item.sub && <div className="text-[10px] text-gray-400 mt-0.5 italic">{item.sub}</div>}
                     </div>
                   ))}
                 </div>
@@ -360,18 +363,23 @@ export default function Index() {
       <section id="activities" className="relative z-10 py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <SectionTitle emoji="🌟" title="Наши занятия" color="text-kidz-green" />
-          <p className="text-center text-gray-500 mt-2 mb-10">Всестороннее развитие каждого ребёнка</p>
+          <p className="text-center text-gray-500 mt-2 mb-10">Всестороннее развитие каждого ребёнка — по реальному расписанию</p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {ACTIVITIES.map((act, i) => (
               <div
                 key={i}
-                className="bg-kidz-cream rounded-3xl p-5 hover:shadow-xl hover:scale-[1.03] transition-all duration-300 flex flex-col gap-3"
+                className="bg-kidz-cream rounded-3xl p-5 hover:shadow-xl hover:scale-[1.03] transition-all duration-300 flex flex-col gap-2"
               >
-                <div className={`${act.color} w-14 h-14 rounded-2xl flex items-center justify-center text-3xl shadow-md`}>
-                  {act.emoji}
+                <div className="flex items-start justify-between">
+                  <div className={`${act.color} w-12 h-12 rounded-2xl flex items-center justify-center text-2xl shadow-md shrink-0`}>
+                    {act.emoji}
+                  </div>
+                  <span className="text-[10px] font-bold text-white bg-gray-400 rounded-full px-2 py-0.5 ml-2 mt-1 shrink-0">
+                    {act.day}
+                  </span>
                 </div>
-                <div className="font-bold text-gray-800 text-base leading-tight">{act.title}</div>
-                <div className="text-xs text-gray-500 leading-relaxed">{act.desc}</div>
+                <div className="font-bold text-gray-800 text-sm leading-tight">{act.title}</div>
+                <div className="text-[11px] text-gray-500 leading-relaxed whitespace-pre-line">{act.desc}</div>
               </div>
             ))}
           </div>

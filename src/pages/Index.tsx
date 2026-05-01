@@ -479,13 +479,7 @@ export default function Index() {
               </div>
             ))}
           </div>
-          <div className="mt-8 bg-kidz-yellow/30 border-2 border-kidz-yellow rounded-3xl p-5 flex items-start gap-3">
-            <span className="text-2xl">📌</span>
-            <div>
-              <div className="font-bold text-gray-800">Дополнительные мероприятия</div>
-              <div className="text-gray-600 text-sm mt-1">Каждую последнюю пятницу месяца проводятся праздники и открытые занятия для родителей. Следите за анонсами!</div>
-            </div>
-          </div>
+
         </div>
       </section>
 
@@ -597,7 +591,7 @@ export default function Index() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
               {[
-                { icon: "Phone", label: "Телефон", value: "+7 (953) 861-20-46", color: "bg-kidz-green/20 text-kidz-green" },
+
                 { icon: "Mail", label: "Email", value: "govorova.73@inbox.ru", color: "bg-kidz-blue/20 text-kidz-blue" },
                 { icon: "MapPin", label: "Адрес", value: "Новосибирск, ул. Ереванская, 9, МБДОУ д/с №272", color: "bg-kidz-orange/20 text-kidz-orange" },
                 { icon: "Clock", label: "Время работы", value: "Пн–Пт, 7:00–14:00 / 13:00–19:00", color: "bg-kidz-purple/20 text-kidz-purple" },

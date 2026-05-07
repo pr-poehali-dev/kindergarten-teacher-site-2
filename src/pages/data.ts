@@ -294,6 +294,20 @@ export const ARTICLES = [
 
 export const NEWS = [
   {
+    date: "7 мая 2026",
+    emoji: "🎖️",
+    color: "bg-kidz-red",
+    title: "Парад Победы",
+    text: "Отметили День Победы ярким парадом! Дети надели пилотки, георгиевские ленточки, маршировали с флагами и барабанами. Поздравляем всех с великим праздником — 9 Мая! 🎉",
+    photos: [
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/a0489501-d197-47c2-bd2b-9f51666b33d4.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/e94a11c6-f2f6-4885-9000-dda8654a55c1.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/59a8529c-9f88-45bb-91da-a63031037f75.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/8db45845-bfb7-49a4-a4a5-aa2922871f38.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/700751e5-d957-458b-82e6-ae19db7a499c.jpg",
+    ],
+  },
+  {
     date: "26 апреля 2026",
     emoji: "🧹",
     color: "bg-kidz-green",

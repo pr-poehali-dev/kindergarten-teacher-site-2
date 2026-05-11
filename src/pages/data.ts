@@ -488,4 +488,16 @@ export const GALLERY_GROUPS = [
       { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/709d02fc-a14a-4c54-be61-d13ed310c4a1.jpg", label: "Гармонь с цветами" },
     ],
   },
+  {
+    title: "День Победы",
+    emoji: "🎖️",
+    color: "text-kidz-red",
+    items: [
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/612f123a-9840-40d3-a6d6-27aae6b89bef.jpg", label: "Изучаем историю Победы" },
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/9ee354ec-c37c-409e-a7b5-8558d434b18d.jpg", label: "Рассказ о войне" },
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/a73b3237-cd12-4641-9a19-21150f26d3f5.jpg", label: "У стенда с фотографиями" },
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/df5d552d-c969-4591-9fa5-721b06dc9b25.jpg", label: "Открытки к 9 Мая" },
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/e1a0a840-994d-4100-83e7-5866741ef3ab.jpg", label: "Делаем открытки вместе" },
+    ],
+  },
 ];

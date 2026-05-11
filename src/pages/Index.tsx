@@ -378,16 +378,20 @@ export default function Index() {
                 </div>
                 <h3 className="font-bold text-gray-800 text-base mb-2 leading-tight">{item.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{item.text}</p>
-                {'video' in item && item.video && (
-                  <div className="mt-4 rounded-2xl overflow-hidden">
-                    <iframe
-                      src={item.video}
-                      className="w-full"
-                      style={{ height: 220 }}
-                      allowFullScreen
-                      allow="clipboard-write; autoplay"
-                      frameBorder="0"
-                    />
+                {'videos' in item && item.videos && (
+                  <div className="flex flex-col gap-3 mt-4">
+                    {item.videos.map((src, vi) => (
+                      <div key={vi} className="rounded-2xl overflow-hidden">
+                        <iframe
+                          src={src}
+                          className="w-full"
+                          style={{ height: 220 }}
+                          allowFullScreen
+                          allow="clipboard-write; autoplay"
+                          frameBorder="0"
+                        />
+                      </div>
+                    ))}
                   </div>
                 )}
                 {'photos' in item && item.photos && (

@@ -299,7 +299,10 @@ export const NEWS = [
     color: "bg-kidz-red",
     title: "Парад Победы",
     text: "Отметили День Победы ярким парадом! Дети надели пилотки, георгиевские ленточки, маршировали с флагами и барабанами. Поздравляем всех с великим праздником — 9 Мая! 🎉",
-    video: "https://rutube.ru/play/embed/4120309490c8d8a51dbfa48f99ba45ba/?p=nCTghwgB5bPyFbMzvZcmvg",
+    videos: [
+      "https://rutube.ru/play/embed/4120309490c8d8a51dbfa48f99ba45ba/?p=nCTghwgB5bPyFbMzvZcmvg",
+      "https://rutube.ru/play/embed/486513360a4ea59aa29c6cfa124271c2/?p=NjSGmVCk8yLF2dB_KS-2bg",
+    ],
     photos: [
       "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/a0489501-d197-47c2-bd2b-9f51666b33d4.jpg",
       "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/e94a11c6-f2f6-4885-9000-dda8654a55c1.jpg",

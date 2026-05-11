@@ -316,6 +316,11 @@ export const NEWS = [
       "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/59a8529c-9f88-45bb-91da-a63031037f75.jpg",
       "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/8db45845-bfb7-49a4-a4a5-aa2922871f38.jpg",
       "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/700751e5-d957-458b-82e6-ae19db7a499c.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/e873923e-b30b-4184-8edc-5a674f77621b.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/20129d71-fa71-4960-be36-aea51f7f2987.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/4e59a3e9-1802-4005-975d-a6e97a7d2006.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/ad00a07d-9deb-44cb-b790-e8d06041f2cc.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/fdaca696-4c72-410d-8fcc-a25a122d4923.jpg",
     ],
   },
   {
@@ -498,6 +503,11 @@ export const GALLERY_GROUPS = [
       { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/a73b3237-cd12-4641-9a19-21150f26d3f5.jpg", label: "У стенда с фотографиями" },
       { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/df5d552d-c969-4591-9fa5-721b06dc9b25.jpg", label: "Открытки к 9 Мая" },
       { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/e1a0a840-994d-4100-83e7-5866741ef3ab.jpg", label: "Делаем открытки вместе" },
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/e873923e-b30b-4184-8edc-5a674f77621b.jpg", label: "Мастерим открытки к 9 Мая" },
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/20129d71-fa71-4960-be36-aea51f7f2987.jpg", label: "Показываем открытки" },
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/4e59a3e9-1802-4005-975d-a6e97a7d2006.jpg", label: "Мы — наследники Великой Победы!" },
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/ad00a07d-9deb-44cb-b790-e8d06041f2cc.jpg", label: "Бессмертный полк" },
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/fdaca696-4c72-410d-8fcc-a25a122d4923.jpg", label: "Изучаем стенд с фотографиями" },
     ],
   },
 ];

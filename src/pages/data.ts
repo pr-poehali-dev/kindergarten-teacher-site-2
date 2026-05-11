@@ -295,6 +295,16 @@ export const ARTICLES = [
 export const NEWS = [
   {
     date: "11 мая 2026",
+    emoji: "🎬",
+    color: "bg-kidz-purple",
+    title: "Видео-презентация группы",
+    text: "Предлагаем посмотреть видео-презентацию нашей группы. Узнайте, как мы живём, чем занимаемся и что нас объединяет!",
+    videos: [
+      "https://rutube.ru/play/embed/dfd3c16ebcf925e9cc88259a1659445d/?p=Z4XBWkB8dzvjOhCa73dNqA",
+    ],
+  },
+  {
+    date: "11 мая 2026",
     emoji: "🔬",
     color: "bg-kidz-blue",
     title: "Мастер-класс «Чудеса своими руками»",

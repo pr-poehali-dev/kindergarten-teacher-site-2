@@ -321,6 +321,8 @@ export const NEWS = [
       "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/4e59a3e9-1802-4005-975d-a6e97a7d2006.jpg",
       "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/ad00a07d-9deb-44cb-b790-e8d06041f2cc.jpg",
       "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/fdaca696-4c72-410d-8fcc-a25a122d4923.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/f7f9f6d6-0c3d-4244-ac21-c9bd5b6ca981.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/27885212-47ff-43bd-bfbc-87d1bcf24458.jpg",
     ],
   },
   {
@@ -508,6 +510,15 @@ export const GALLERY_GROUPS = [
       { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/4e59a3e9-1802-4005-975d-a6e97a7d2006.jpg", label: "Мы — наследники Великой Победы!" },
       { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/ad00a07d-9deb-44cb-b790-e8d06041f2cc.jpg", label: "Бессмертный полк" },
       { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/fdaca696-4c72-410d-8fcc-a25a122d4923.jpg", label: "Изучаем стенд с фотографиями" },
+    ],
+  },
+  {
+    title: "Окна Победы",
+    emoji: "🕊️",
+    color: "text-kidz-blue",
+    items: [
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/f7f9f6d6-0c3d-4244-ac21-c9bd5b6ca981.jpg", label: "Окно Победы — 9 Мая 1941–1945" },
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/27885212-47ff-43bd-bfbc-87d1bcf24458.jpg", label: "С Днём Победы!" },
     ],
   },
 ];

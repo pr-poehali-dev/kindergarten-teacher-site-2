@@ -294,7 +294,7 @@ export const ARTICLES = [
 
 export const NEWS = [
   {
-    date: "11 мая 2026",
+    date: "8 мая 2026",
     emoji: "🎬",
     color: "bg-kidz-purple",
     title: "Видео-презентация группы",

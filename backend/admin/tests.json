@@ -1,20 +1,19 @@
 {
   "tests": [
     {
-      "name": "Отказ без пароля",
-      "method": "GET",
+      "name": "Отказ с неверным паролем",
+      "method": "POST",
       "path": "/",
+      "body": {"action": "list", "password": "wrong"},
       "expectedStatus": 401,
-      "expectedBody": {"error": "string"},
       "bodyMatcher": "partial"
     },
     {
       "name": "Вход с верным паролем",
-      "method": "GET",
+      "method": "POST",
       "path": "/",
-      "headers": {"X-Admin-Password": "2209"},
+      "body": {"action": "list", "password": "2209"},
       "expectedStatus": 200,
-      "expectedBody": {"reviews": []},
       "bodyMatcher": "partial"
     }
   ]

@@ -3,6 +3,13 @@ import Icon from "@/components/ui/icon";
 
 const ADMIN_URL = "https://functions.poehali.dev/9c0cf207-acc6-4481-b777-145da3f7021a";
 
+const api = (password: string, action: string, extra?: object) =>
+  fetch(ADMIN_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ password, action, ...extra }),
+  });
+
 type Review = { id: number; name: string; text: string; rating: number; approved: boolean; created_at: string };
 
 export default function Admin() {
@@ -15,27 +22,21 @@ export default function Admin() {
   const [addLoading, setAddLoading] = useState(false);
   const [showAdd, setShowAdd] = useState(false);
 
-  const apiFetch = (method: string, body?: object) =>
-    fetch(ADMIN_URL, {
-      method,
-      headers: { "Content-Type": "application/json", "X-Admin-Password": token },
-      body: body ? JSON.stringify(body) : undefined,
-    });
-
   const login = async () => {
     setAuthError("");
-    const r = await fetch(ADMIN_URL, {
-      headers: { "X-Admin-Password": password },
-    });
+    const r = await api(password, "list");
     if (r.status === 401) { setAuthError("Неверный пароль"); return; }
+    const data = await r.json();
+    const parsed = typeof data === "string" ? JSON.parse(data) : data;
     sessionStorage.setItem("admin_token", password);
     setToken(password);
+    setReviews(parsed.reviews || []);
   };
 
   const fetchReviews = async () => {
     setLoading(true);
     try {
-      const r = await apiFetch("GET");
+      const r = await api(token, "list");
       if (r.status === 401) { setToken(""); sessionStorage.removeItem("admin_token"); return; }
       const data = await r.json();
       const parsed = typeof data === "string" ? JSON.parse(data) : data;
@@ -47,20 +48,20 @@ export default function Admin() {
   useEffect(() => { if (token) fetchReviews(); }, [token]);
 
   const approve = async (id: number, approved: boolean) => {
-    await apiFetch("POST", { action: "approve", id, approved });
+    await api(token, "approve", { id, approved });
     fetchReviews();
   };
 
   const remove = async (id: number) => {
     if (!confirm("Удалить отзыв?")) return;
-    await apiFetch("POST", { action: "delete", id });
+    await api(token, "delete", { id });
     fetchReviews();
   };
 
   const addReview = async () => {
     if (!addForm.name.trim() || !addForm.text.trim()) return;
     setAddLoading(true);
-    await apiFetch("POST", { action: "add", ...addForm });
+    await api(token, "add", addForm);
     setAddForm({ name: "", text: "", rating: 5 });
     setShowAdd(false);
     await fetchReviews();

@@ -8,37 +8,36 @@ def handler(event: dict, context) -> dict:
     cors = {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, X-Admin-Password',
+        'Access-Control-Allow-Headers': 'Content-Type',
     }
 
     if event.get('httpMethod') == 'OPTIONS':
         return {'statusCode': 200, 'headers': cors, 'body': ''}
 
-    headers = event.get('headers') or {}
-    password = headers.get('X-Admin-Password') or headers.get('x-admin-password') or ''
     admin_password = os.environ.get('ADMIN_PASSWORD', '')
-
-    if password != admin_password:
-        return {'statusCode': 401, 'headers': cors, 'body': json.dumps({'error': 'Неверный пароль'}, ensure_ascii=False)}
-
     method = event.get('httpMethod')
-    conn = psycopg2.connect(os.environ['DATABASE_URL'])
-    cur = conn.cursor()
-
-    if method == 'GET':
-        cur.execute("SELECT id, name, text, rating, approved, created_at FROM reviews ORDER BY created_at DESC")
-        rows = cur.fetchall()
-        reviews = [
-            {'id': r[0], 'name': r[1], 'text': r[2], 'rating': r[3], 'approved': r[4], 'created_at': str(r[5])}
-            for r in rows
-        ]
-        cur.close()
-        conn.close()
-        return {'statusCode': 200, 'headers': cors, 'body': json.dumps({'reviews': reviews}, ensure_ascii=False)}
 
     if method == 'POST':
         body = json.loads(event.get('body') or '{}')
+        password = body.get('password', '')
+
+        if password != admin_password:
+            return {'statusCode': 401, 'headers': cors, 'body': json.dumps({'error': 'Неверный пароль'}, ensure_ascii=False)}
+
         action = body.get('action')
+        conn = psycopg2.connect(os.environ['DATABASE_URL'])
+        cur = conn.cursor()
+
+        if action == 'list':
+            cur.execute("SELECT id, name, text, rating, approved, created_at FROM reviews ORDER BY created_at DESC")
+            rows = cur.fetchall()
+            reviews = [
+                {'id': r[0], 'name': r[1], 'text': r[2], 'rating': r[3], 'approved': r[4], 'created_at': str(r[5])}
+                for r in rows
+            ]
+            cur.close()
+            conn.close()
+            return {'statusCode': 200, 'headers': cors, 'body': json.dumps({'reviews': reviews}, ensure_ascii=False)}
 
         if action == 'approve':
             cur.execute("UPDATE reviews SET approved = %s WHERE id = %s", (body.get('approved', True), body.get('id')))
@@ -72,6 +71,8 @@ def handler(event: dict, context) -> dict:
             conn.close()
             return {'statusCode': 201, 'headers': cors, 'body': json.dumps({'ok': True, 'id': new_id}, ensure_ascii=False)}
 
-    cur.close()
-    conn.close()
+        cur.close()
+        conn.close()
+        return {'statusCode': 400, 'headers': cors, 'body': json.dumps({'error': 'Неизвестное действие'}, ensure_ascii=False)}
+
     return {'statusCode': 405, 'headers': cors, 'body': json.dumps({'error': 'Method not allowed'})}

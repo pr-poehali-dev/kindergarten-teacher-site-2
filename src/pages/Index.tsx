@@ -589,6 +589,33 @@ export default function Index() {
             </div>
           </div>
 
+          <div className="bg-kidz-cream rounded-3xl p-6 mt-6">
+            <div className="font-bold text-gray-800 text-center text-lg mb-2">🎖️ Дипломы конкурса «Надежды России», 2026</div>
+            <p className="text-center text-gray-500 text-sm mb-5">IX Всероссийский конкурс — Лауреаты I степени, номинация «Символ памяти народной»</p>
+            <div className="grid grid-cols-2 gap-4 max-w-lg mx-auto">
+              {[
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/6fe977a2-de9d-4dc2-90fa-ab80f6545a7c.jpg", name: "Финагина Майя, 5 лет", work: "«Голубь мира»" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/2c399ec8-0293-4308-901b-bede452e2476.jpg", name: "Щербаков Мирон, 4 года", work: "«Фронтовая гармонь»" },
+              ].map((child, i) => (
+                <div key={i} onClick={() => setLightboxSrc(child.src)} className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group cursor-zoom-in">
+                  <div className="relative overflow-hidden">
+                    <img src={child.src} alt={child.name} className="w-full h-56 object-cover object-top group-hover:scale-105 transition-transform duration-300" />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center">
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 rounded-full p-2 shadow-lg">
+                        <Icon name="ZoomIn" size={16} />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-3 text-center">
+                    <p className="text-xs font-semibold text-gray-700">🥇 Лауреат I степени</p>
+                    <p className="text-xs text-gray-700 font-medium mt-0.5">{child.name}</p>
+                    <p className="text-xs text-gray-500">{child.work}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div className="text-center mt-10">
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-kidz-yellow to-kidz-orange text-white font-bold px-8 py-4 rounded-3xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 cursor-pointer">
               <span className="text-xl">🌟</span>

@@ -3,13 +3,14 @@ import Icon from "@/components/ui/icon";
 import SectionTitle from "@/components/SectionTitle";
 import ArticleModal from "@/components/ArticleModal";
 import ReviewsSection from "@/components/ReviewsSection";
-import { NAV_ITEMS, ARTICLES, NEWS, SCHEDULE, ACHIEVEMENTS, GALLERY_GROUPS, ACTIVITIES } from "@/pages/data";
+import { NAV_ITEMS, ARTICLES, PROJECTS, NEWS, SCHEDULE, ACHIEVEMENTS, GALLERY_GROUPS, ACTIVITIES } from "@/pages/data";
 import { jsPDF } from "jspdf";
 
 export default function Index() {
   const [activeSection, setActiveSection] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
   const [openArticle, setOpenArticle] = useState<typeof ARTICLES[0] | null>(null);
+  const [openProject, setOpenProject] = useState<typeof PROJECTS[0] | null>(null);
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
 
   const downloadSchedulePDF = () => {
@@ -461,6 +462,34 @@ export default function Index() {
         </div>
       </section>
 
+      {/* PROJECTS */}
+      <section id="projects" className="relative z-10 py-20 px-4 bg-kidz-cream">
+        <div className="max-w-6xl mx-auto">
+          <SectionTitle emoji="🏫" title="Педагогические проекты" color="text-kidz-purple" />
+          <p className="text-center text-gray-500 mt-2 mb-10">Авторские проекты — методические разработки и реализованные идеи</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {PROJECTS.map((project, i) => (
+              <div key={i} className="bg-white border border-gray-100 rounded-3xl p-6 hover:shadow-xl transition-all duration-300 group flex flex-col">
+                <div className={`${project.color} w-14 h-14 rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform`}>
+                  {project.emoji}
+                </div>
+                <div className="inline-block bg-kidz-purple/10 text-kidz-purple text-xs font-bold px-3 py-1 rounded-full mb-3 w-fit">
+                  {project.tag}
+                </div>
+                <h3 className="font-bold text-gray-800 text-lg mb-2 leading-tight">{project.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed flex-1">{project.desc}</p>
+                <button
+                  onClick={() => setOpenProject(project)}
+                  className="mt-5 w-full bg-kidz-purple text-white font-bold py-2.5 px-4 rounded-2xl hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
+                >
+                  Открыть проект <Icon name="ArrowRight" size={16} />
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* SCHEDULE */}
       <section id="schedule" className="relative z-10 py-20 px-4">
         <div className="max-w-6xl mx-auto">
@@ -689,6 +718,30 @@ export default function Index() {
 
     {openArticle && (
       <ArticleModal article={openArticle} onClose={() => setOpenArticle(null)} />
+    )}
+
+    {openProject && (
+      <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/50" onClick={() => setOpenProject(null)}>
+        <div className="bg-white rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl" onClick={(e) => e.stopPropagation()}>
+          <div className="sticky top-0 bg-white border-b border-gray-100 px-6 py-4 flex items-center justify-between rounded-t-3xl">
+            <div className="flex items-center gap-3">
+              <div className={`${openProject.color} w-10 h-10 rounded-xl flex items-center justify-center text-xl`}>
+                {openProject.emoji}
+              </div>
+              <div>
+                <div className="inline-block bg-kidz-purple/10 text-kidz-purple text-xs font-bold px-2 py-0.5 rounded-full mb-0.5">{openProject.tag}</div>
+                <h2 className="font-bold text-gray-800 text-base leading-tight">{openProject.title}</h2>
+              </div>
+            </div>
+            <button onClick={() => setOpenProject(null)} className="text-gray-400 hover:text-gray-700 transition-colors ml-4">
+              <Icon name="X" size={24} />
+            </button>
+          </div>
+          <div className="px-6 py-6 text-gray-700 text-sm leading-relaxed whitespace-pre-line">
+            {openProject.content}
+          </div>
+        </div>
+      </div>
     )}
 
     {lightboxSrc && (

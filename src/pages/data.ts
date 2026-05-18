@@ -6,6 +6,7 @@ export const NAV_ITEMS = [
   { id: "news", label: "Новости" },
   { id: "gallery", label: "Галерея" },
   { id: "articles", label: "Статьи" },
+  { id: "projects", label: "Проекты" },
   { id: "schedule", label: "Расписание" },
   { id: "activities", label: "Занятия" },
   { id: "achievements", label: "Достижения" },
@@ -290,6 +291,9 @@ export const ARTICLES = [
 
 Помните: терпение, последовательность и ваша уверенность — лучшие помощники в этот период.`,
   },
+];
+
+export const PROJECTS = [
   {
     emoji: "🎖️",
     color: "bg-kidz-red",

@@ -1,6 +1,32 @@
 import json
 import os
 import psycopg2
+import smtplib
+from email.mime.text import MIMEText
+
+
+def send_notification(name: str, text: str, rating: int):
+    smtp_password = os.environ.get('SMTP_PASSWORD', '')
+    if not smtp_password:
+        return
+    stars = '★' * rating + '☆' * (5 - rating)
+    msg = MIMEText(
+        f"Новый отзыв на сайте!\n\n"
+        f"Имя: {name}\n"
+        f"Оценка: {stars}\n"
+        f"Текст: {text}\n\n"
+        f"Чтобы одобрить, зайдите в админ-панель.",
+        'plain', 'utf-8'
+    )
+    msg['Subject'] = f'Новый отзыв от {name}'
+    msg['From'] = 'govorova.73@inbox.ru'
+    msg['To'] = 'govorova.73@inbox.ru'
+    try:
+        with smtplib.SMTP_SSL('smtp.inbox.ru', 465) as server:
+            server.login('govorova.73@inbox.ru', smtp_password)
+            server.send_message(msg)
+    except Exception as e:
+        print(f"Email error: {e}")
 
 
 def handler(event: dict, context) -> dict:
@@ -83,6 +109,9 @@ def handler(event: dict, context) -> dict:
         conn.commit()
         cur.close()
         conn.close()
+
+        send_notification(name, text, rating)
+
         return {'statusCode': 201, 'headers': cors, 'body': json.dumps({'ok': True, 'id': new_id}, ensure_ascii=False)}
 
     cur.close()

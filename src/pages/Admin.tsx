@@ -22,15 +22,13 @@ export default function Admin() {
   const [addLoading, setAddLoading] = useState(false);
   const [showAdd, setShowAdd] = useState(false);
 
-  const login = async () => {
-    setAuthError("");
-    const r = await api(password, "list");
-    if (r.status === 401) { setAuthError("Неверный пароль"); return; }
-    const data = await r.json();
-    const parsed = typeof data === "string" ? JSON.parse(data) : data;
-    sessionStorage.setItem("admin_token", password);
-    setToken(password);
-    setReviews(parsed.reviews || []);
+  const login = () => {
+    if (password.trim() === "2209") {
+      sessionStorage.setItem("admin_token", "2209");
+      setToken("2209");
+    } else {
+      setAuthError("Неверный пароль");
+    }
   };
 
   const fetchReviews = async () => {

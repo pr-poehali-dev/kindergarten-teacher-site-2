@@ -1,0 +1,21 @@
+{
+  "tests": [
+    {
+      "name": "Отказ без пароля",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 401,
+      "expectedBody": {"error": "string"},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Вход с верным паролем",
+      "method": "GET",
+      "path": "/",
+      "headers": {"X-Admin-Password": "2209"},
+      "expectedStatus": 200,
+      "expectedBody": {"reviews": []},
+      "bodyMatcher": "partial"
+    }
+  ]
+}

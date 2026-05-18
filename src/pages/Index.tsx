@@ -331,6 +331,7 @@ export default function Index() {
                     { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/8cc69b80-a322-45e4-818e-a72ab169befc.jpg", label: "Диплом победителя (1 место) — Всероссийский конкурс «Детский сад» (Мама — солнышко моё), «Солнечный свет», 2025" },
                     { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/7b9ba561-5620-4f91-b4b3-595e69f0618a.jpg", label: "Диплом победителя (1 место) — Всероссийский конкурс «Детский сад» (Мамочка, ты тоже маленькой была), «Солнечный свет», 2026" },
                     { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/6cc07a2c-fcdf-4511-b636-9ce77bd6c9e3.jpg", label: "Диплом победителя (1 место) — Всероссийский конкурс «Стенгазета» (Мамочка, ты тоже маленькой была), «Солнечный свет», 2026" },
+                    { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/d8e46109-101d-47c8-a3f6-8894961aa7c9.jpg", label: "Диплом победителя (1 место) — Открытое региональное конкурсное мероприятие «Лучшая презентация проекта», «Золотой век», 2026" },
                   ].map((award, i) => (
                     <div key={i} onClick={() => setLightboxSrc(award.src)} className="bg-kidz-cream rounded-2xl overflow-hidden shadow hover:shadow-lg transition-all duration-300 group cursor-zoom-in">
                       <img src={award.src} alt={award.label} className="w-full h-36 object-cover object-top group-hover:scale-[1.02] transition-transform duration-300" />

@@ -15,11 +15,13 @@ def handler(event: dict, context) -> dict:
         return {'statusCode': 200, 'headers': cors, 'body': ''}
 
     admin_password = os.environ.get('ADMIN_PASSWORD', '')
+    print(f"DEBUG: admin_password set={bool(admin_password)}, len={len(admin_password)}")
     method = event.get('httpMethod')
 
     if method == 'POST':
         body = json.loads(event.get('body') or '{}')
         password = body.get('password', '')
+        print(f"DEBUG: received password len={len(password)}, match={password == admin_password}")
 
         if password != admin_password:
             return {'statusCode': 401, 'headers': cors, 'body': json.dumps({'error': 'Неверный пароль'}, ensure_ascii=False)}

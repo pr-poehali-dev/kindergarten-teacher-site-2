@@ -73,10 +73,15 @@ export default function Admin() {
           <div className="text-5xl text-center mb-4">🔒</div>
           <h1 className="font-bold text-xl text-center mb-6 text-gray-800">Вход в админ-панель</h1>
           <input
-            type="password"
+            type="tel"
+            inputMode="numeric"
+            autoComplete="off"
+            autoCorrect="off"
+            autoCapitalize="off"
+            spellCheck={false}
             placeholder="Пароль"
             value={password}
-            onChange={e => setPassword(e.target.value)}
+            onChange={e => setPassword(e.target.value.trim())}
             onKeyDown={e => e.key === "Enter" && login()}
             className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 mb-2 focus:outline-none focus:border-orange-400 text-gray-800"
           />

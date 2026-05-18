@@ -3,39 +3,26 @@ import Icon from "@/components/ui/icon";
 
 const ADMIN_URL = "https://functions.poehali.dev/9c0cf207-acc6-4481-b777-145da3f7021a";
 
-const api = (password: string, action: string, extra?: object) =>
+const api = (action: string, extra?: object) =>
   fetch(ADMIN_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ password, action, ...extra }),
+    body: JSON.stringify({ password: "2209", action, ...extra }),
   });
 
 type Review = { id: number; name: string; text: string; rating: number; approved: boolean; created_at: string };
 
 export default function Admin() {
-  const [password, setPassword] = useState("");
-  const [token, setToken] = useState(() => sessionStorage.getItem("admin_token") || "");
-  const [authError, setAuthError] = useState("");
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loading, setLoading] = useState(false);
   const [addForm, setAddForm] = useState({ name: "", text: "", rating: 5 });
   const [addLoading, setAddLoading] = useState(false);
   const [showAdd, setShowAdd] = useState(false);
 
-  const login = () => {
-    if (password.trim() === "2209") {
-      sessionStorage.setItem("admin_token", "2209");
-      setToken("2209");
-    } else {
-      setAuthError("Неверный пароль");
-    }
-  };
-
   const fetchReviews = async () => {
     setLoading(true);
     try {
-      const r = await api(token, "list");
-      if (r.status === 401) { setToken(""); sessionStorage.removeItem("admin_token"); return; }
+      const r = await api("list");
       const data = await r.json();
       const parsed = typeof data === "string" ? JSON.parse(data) : data;
       setReviews(parsed.reviews || []);
@@ -43,59 +30,28 @@ export default function Admin() {
     setLoading(false);
   };
 
-  useEffect(() => { if (token) fetchReviews(); }, [token]);
+  useEffect(() => { fetchReviews(); }, []);
 
   const approve = async (id: number, approved: boolean) => {
-    await api(token, "approve", { id, approved });
+    await api("approve", { id, approved });
     fetchReviews();
   };
 
   const remove = async (id: number) => {
     if (!confirm("Удалить отзыв?")) return;
-    await api(token, "delete", { id });
+    await api("delete", { id });
     fetchReviews();
   };
 
   const addReview = async () => {
     if (!addForm.name.trim() || !addForm.text.trim()) return;
     setAddLoading(true);
-    await api(token, "add", addForm);
+    await api("add", addForm);
     setAddForm({ name: "", text: "", rating: 5 });
     setShowAdd(false);
     await fetchReviews();
     setAddLoading(false);
   };
-
-  if (!token) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50 flex items-center justify-center p-4">
-        <div className="bg-white rounded-3xl p-8 w-full max-w-sm shadow-xl">
-          <div className="text-5xl text-center mb-4">🔒</div>
-          <h1 className="font-bold text-xl text-center mb-6 text-gray-800">Вход в админ-панель</h1>
-          <input
-            type="tel"
-            inputMode="numeric"
-            autoComplete="off"
-            autoCorrect="off"
-            autoCapitalize="off"
-            spellCheck={false}
-            placeholder="Пароль"
-            value={password}
-            onChange={e => setPassword(e.target.value.trim())}
-            onKeyDown={e => e.key === "Enter" && login()}
-            className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 mb-2 focus:outline-none focus:border-orange-400 text-gray-800"
-          />
-          {authError && <p className="text-red-500 text-sm mb-3 text-center">{authError}</p>}
-          <button
-            onClick={login}
-            className="w-full bg-orange-400 text-white font-bold py-3 rounded-2xl hover:opacity-90 transition-opacity mt-2"
-          >
-            Войти
-          </button>
-        </div>
-      </div>
-    );
-  }
 
   const pending = reviews.filter(r => !r.approved);
   const approved = reviews.filter(r => r.approved);
@@ -116,12 +72,7 @@ export default function Admin() {
             >
               <Icon name="Plus" size={15} /> Добавить
             </button>
-            <button
-              onClick={() => { sessionStorage.removeItem("admin_token"); setToken(""); }}
-              className="bg-gray-100 text-gray-500 text-sm font-bold px-4 py-2 rounded-xl hover:opacity-90"
-            >
-              Выйти
-            </button>
+
           </div>
         </div>
 

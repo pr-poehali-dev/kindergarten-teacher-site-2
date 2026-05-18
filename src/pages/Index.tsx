@@ -259,7 +259,7 @@ export default function Index() {
               { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/62cad755-aa8e-4ae6-9898-ce5df58c4d04.jpg", label: "Удостоверение о повышении квалификации — НИПКиПРО, программа «Взаимодействие ДОУ и семьи в контексте ФГОС ДО», 36 ч., 2016" },
               { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/0a03d606-a04c-4677-b959-11d0c256110d.jpg", label: "Удостоверение о повышении квалификации — НИПКиПРО, программа «Речевое творчество и детский театр в ДОО», 72 ч., 2023" },
               { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/afbc40cb-8e8b-425b-ab58-a910e4d875fa.jpg", label: "Сертификат НИСО — участие в стажировочной площадке «Среда – третий педагог», проект «НовоСибСад», 2024–2025" },
-              { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/files/b83d94c1-41fb-4fab-ad54-dafd515676bc.jpg", label: "Сертификат о прослушанном вебинаре" },
+              { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/6f8fc22a-8d38-4986-a504-6c2a78c6d0ac.jpg", label: "Сертификат — вебинар «Биоэнергопластика — здоровьесберегающая технология в ДОУ», 2026" },
             ].map((doc, i) => (
               <div key={i} onClick={() => setLightboxSrc(doc.src)} className="bg-gray-50 rounded-3xl overflow-hidden shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group cursor-zoom-in">
                 <div className="relative overflow-hidden">

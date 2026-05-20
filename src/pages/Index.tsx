@@ -646,6 +646,35 @@ export default function Index() {
             </div>
           </div>
 
+          {/* Личные награды воспитателя */}
+          <div className="bg-gradient-to-br from-kidz-yellow/20 to-kidz-orange/10 border-2 border-kidz-yellow rounded-3xl p-6 mt-6">
+            <div className="font-bold text-gray-800 text-center text-lg mb-1">🏅 Мои личные награды</div>
+            <p className="text-center text-gray-500 text-sm mb-5">Достижения воспитателя в профессиональных конкурсах</p>
+            <div
+              onClick={() => setLightboxSrc("https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/07cb6815-64c3-4e3e-8402-b471709a69b4.jpg")}
+              className="max-w-sm mx-auto bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group cursor-zoom-in"
+            >
+              <div className="relative overflow-hidden">
+                <img
+                  src="https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/07cb6815-64c3-4e3e-8402-b471709a69b4.jpg"
+                  alt="Диплом I место — Победы солнечный май"
+                  className="w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center">
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 rounded-full p-2 shadow-lg">
+                    <Icon name="ZoomIn" size={16} />
+                  </div>
+                </div>
+              </div>
+              <div className="p-4 text-center">
+                <p className="text-sm font-bold text-kidz-orange">🥇 I место</p>
+                <p className="text-sm font-semibold text-gray-700 mt-1">«Победы солнечный май»</p>
+                <p className="text-xs text-gray-500 mt-1">Номинация «Главный праздник моей страны»</p>
+                <p className="text-xs text-gray-400 mt-0.5">Федеральный журнал «Звёздочка наша» · 15 мая 2026 г.</p>
+              </div>
+            </div>
+          </div>
+
           <div className="text-center mt-10">
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-kidz-yellow to-kidz-orange text-white font-bold px-8 py-4 rounded-3xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 cursor-pointer">
               <span className="text-xl">🌟</span>

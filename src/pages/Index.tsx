@@ -694,6 +694,101 @@ export default function Index() {
 
       <ReviewsSection />
 
+      {/* ПАМЯТКА */}
+      <section className="relative z-10 py-16 px-4 bg-gradient-to-br from-kidz-blue/10 to-kidz-green/10">
+        <div className="max-w-4xl mx-auto">
+          <SectionTitle emoji="📋" title="Памятка для родителей" color="text-kidz-blue" />
+          <p className="text-center text-gray-500 mt-2 mb-10">Безопасность детей в летний период</p>
+          <div className="grid md:grid-cols-2 gap-5">
+            {[
+              {
+                emoji: "☀️",
+                color: "bg-kidz-yellow",
+                title: "Защита от солнца",
+                items: [
+                  "Панамка или кепка — обязательно на улице",
+                  "Солнцезащитный крем SPF 30–50 каждые 2 часа",
+                  "Активные игры — до 11:00 и после 16:00",
+                  "Светлая одежда из натуральных тканей",
+                ],
+              },
+              {
+                emoji: "💧",
+                color: "bg-kidz-blue",
+                title: "Питьевой режим",
+                items: [
+                  "Предлагать воду каждые 30–40 минут",
+                  "Не ждать, пока ребёнок попросит сам",
+                  "Чистая вода, компоты, морсы — без газировки",
+                  "При жаре норма воды увеличивается вдвое",
+                ],
+              },
+              {
+                emoji: "🏊",
+                color: "bg-kidz-purple",
+                title: "Безопасность у воды",
+                items: [
+                  "Дети у воды — только под постоянным присмотром",
+                  "До 7 лет — нарукавники или спасательный жилет",
+                  "Купаться только на оборудованных пляжах",
+                  "Надувные матрасы и круги вдали от берега — запрет",
+                ],
+              },
+              {
+                emoji: "🌡️",
+                color: "bg-kidz-orange",
+                title: "Тепловой удар",
+                items: [
+                  "Признаки: вялость, головная боль, горячая кожа",
+                  "Немедленно увести в тень или прохладу",
+                  "Снять лишнюю одежду, смочить кожу прохладной водой",
+                  "Дать воды мелкими глотками, вызвать скорую (112)",
+                ],
+              },
+              {
+                emoji: "🌿",
+                color: "bg-kidz-green",
+                title: "На природе и даче",
+                items: [
+                  "Закрытая одежда + репеллент от клещей и комаров",
+                  "После прогулки — осмотр тела на наличие клещей",
+                  "Не трогать незнакомые грибы, ягоды и растения",
+                  "Мангал и костёр — на расстоянии от детей",
+                ],
+              },
+              {
+                emoji: "🚗",
+                color: "bg-kidz-pink",
+                title: "В поездках",
+                items: [
+                  "Автокресло — обязательно до 12 лет",
+                  "Не оставлять ребёнка в закрытой машине в жару",
+                  "Остановки каждые 1,5–2 часа в дороге",
+                  "Аптечка: жаропонижающее, пластырь, средство от укусов",
+                ],
+              },
+            ].map((block, i) => (
+              <div key={i} className="bg-white rounded-3xl p-5 shadow-md hover:shadow-lg transition-shadow">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className={`${block.color}/30 w-11 h-11 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0`}>
+                    {block.emoji}
+                  </div>
+                  <h3 className="font-bold text-gray-800 text-base">{block.title}</h3>
+                </div>
+                <ul className="space-y-2">
+                  {block.items.map((item, j) => (
+                    <li key={j} className="flex items-start gap-2 text-sm text-gray-600">
+                      <span className="text-kidz-green font-bold mt-0.5 flex-shrink-0">✓</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CONTACTS */}
       <section id="contacts" className="relative z-10 py-20 px-4">
         <div className="max-w-4xl mx-auto">

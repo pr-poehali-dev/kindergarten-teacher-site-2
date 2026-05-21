@@ -248,6 +248,28 @@ export default function Index() {
         </div>
       </section>
 
+      {/* ANNOUNCEMENT */}
+      <section className="relative z-10 px-4 py-6">
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-gradient-to-r from-kidz-orange to-kidz-yellow rounded-3xl p-6 shadow-xl flex flex-col md:flex-row items-center gap-5">
+            <div className="text-5xl flex-shrink-0">📢</div>
+            <div className="flex-1 text-center md:text-left">
+              <div className="inline-block bg-white/30 text-white text-xs font-bold px-3 py-1 rounded-full mb-2 uppercase tracking-wide">Важное объявление</div>
+              <h3 className="text-white font-bold text-xl md:text-2xl leading-tight mb-1">Итоговое групповое родительское собрание</h3>
+              <p className="text-white/90 text-sm md:text-base mb-3">Подведём итоги учебного года, обсудим успехи и достижения детей, планы на лето и переход в следующую группу. Присутствие каждого родителя очень важно!</p>
+              <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+                <div className="bg-white/25 text-white rounded-xl px-4 py-2 text-sm font-bold flex items-center gap-2">
+                  📅 28 мая 2026 года
+                </div>
+                <div className="bg-white/25 text-white rounded-xl px-4 py-2 text-sm font-bold flex items-center gap-2">
+                  🕠 17:30
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* DOCUMENTS */}
       <section id="documents" className="relative z-10 py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">

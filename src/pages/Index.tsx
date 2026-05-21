@@ -133,6 +133,70 @@ export default function Index() {
     img.src = photoUrl;
   };
 
+  const downloadMemoПDF = () => {
+    const doc = new jsPDF({ orientation: "portrait", unit: "mm", format: "a4" });
+
+    const addText = (text: string, x: number, y: number, size: number, style: "normal" | "bold" = "normal", color: [number, number, number] = [50, 50, 50]) => {
+      doc.setFontSize(size);
+      doc.setFont("helvetica", style);
+      doc.setTextColor(...color);
+      doc.text(text, x, y);
+    };
+
+    doc.setFillColor(255, 248, 230);
+    doc.rect(0, 0, 210, 297, "F");
+
+    doc.setFillColor(255, 140, 0);
+    doc.rect(0, 0, 210, 22, "F");
+    addText("PAMYATKA DLYA RODITELEY", 105, 10, 14, "bold", [255, 255, 255]);
+    addText("Bezopasnost' detey v letniy period", 105, 17, 9, "normal", [255, 255, 255]);
+    doc.setFontSize(9);
+    doc.setFont("helvetica", "normal");
+    doc.setTextColor(150, 150, 150);
+
+    const blocks = [
+      { title: "ZASHCHITA OT SOLNTSA", items: ["Pamyatka ili kepka - obyazatel'no na ulitse", "Solntsezashchitnyy krem SPF 30-50 kazhdye 2 chasa", "Aktivnye igry - do 11:00 i posle 16:00", "Svetlaya odezhda iz natural'nykh tkaney"] },
+      { title: "PITEVOY REZHIM", items: ["Predlagat' vodu kazhdye 30-40 minut", "Ne zhdat', poka rebenok poprosit sam", "Chistaya voda, kompoty, morsy - bez gazirovki", "Pri zhare norma vody uvelichivaetsya vdvoye"] },
+      { title: "BEZOPASNOST' U VODY", items: ["Deti u vody - tol'ko pod postoyannym prismotrom", "Do 7 let - narukavniki ili spasatel'nyy zhilet", "Kupat'sya tol'ko na oborudovannykh plyazhakh", "Naduvnye matrasy vdali ot berega - zapret"] },
+      { title: "TEPLOVOY UDAR", items: ["Priznaki: vyalost', golovnaya bol', goryachaya kozha", "Nemmedlenno uvesti v ten' ili prokhladu", "Snyat' odezhdu, smochit' kozhu prokhladnoy vodoy", "Dat' vody melkimi glotkami, vyzovat' skoruyu (112)"] },
+      { title: "NA PRIRODE I DACHE", items: ["Zakrytaya odezhda + repellent ot kleshchey", "Posle progulki - osmotr tela na kleshchey", "Ne trогat' neznakomye griby i yagody", "Mangal i koster - na rasstoyaniy ot detey"] },
+      { title: "V POYEZDKAKH", items: ["Avtokreslo - obyazatel'no do 12 let", "Ne ostavlyat' rebenka v zakrytoy mashine v zharu", "Ostanovki kazhdye 1.5-2 chasa v doroge", "Aptechka: zharoponizhayushcheye, plastyr'"] },
+    ];
+
+    const colW = 90;
+    const startX = [15, 110];
+    let y = 30;
+
+    blocks.forEach((block, i) => {
+      const x = startX[i % 2];
+      if (i % 2 === 0 && i > 0) y += 58;
+
+      doc.setFillColor(255, 255, 255);
+      doc.roundedRect(x, y, colW, 52, 4, 4, "F");
+      doc.setDrawColor(220, 220, 220);
+      doc.roundedRect(x, y, colW, 52, 4, 4, "S");
+
+      doc.setFillColor(255, 140, 0);
+      doc.roundedRect(x + 3, y + 3, colW - 6, 8, 2, 2, "F");
+      addText(block.title, x + colW / 2, y + 8.5, 7, "bold", [255, 255, 255]);
+
+      block.items.forEach((item, j) => {
+        doc.setFontSize(6.5);
+        doc.setFont("helvetica", "normal");
+        doc.setTextColor(70, 70, 70);
+        const lines = doc.splitTextToSize(`• ${item}`, colW - 10);
+        doc.text(lines, x + 5, y + 16 + j * 9);
+      });
+    });
+
+    y += 58;
+    doc.setFillColor(255, 140, 0);
+    doc.rect(0, y + 10, 210, 12, "F");
+    addText("MBDOU Detskiy sad No.272 · Novosibirsk · Vospitatel' Govorova M.M.", 105, y + 17.5, 7, "normal", [255, 255, 255]);
+
+    doc.save("pamyatka-bezopasnost-leto.pdf");
+  };
+
   const scrollTo = (id: string) => {
     setActiveSection(id);
     setMenuOpen(false);
@@ -785,6 +849,15 @@ export default function Index() {
                 </ul>
               </div>
             ))}
+          </div>
+          <div className="text-center mt-8">
+            <button
+              onClick={downloadMemoПDF}
+              className="inline-flex items-center gap-2 bg-kidz-orange text-white font-bold px-8 py-3.5 rounded-2xl hover:opacity-90 hover:scale-[1.02] transition-all duration-200 shadow-lg"
+            >
+              <Icon name="Download" size={18} />
+              Скачать памятку (PDF)
+            </button>
           </div>
         </div>
       </section>

@@ -676,6 +676,16 @@ export const PROJECTS = [
 
 export const NEWS = [
   {
+    date: "30 мая 2026",
+    emoji: "🎥",
+    color: "bg-kidz-green",
+    title: "Видеоролик нашей группы",
+    text: "Делимся новым видео из жизни нашей группы. Смотрите, как весело и интересно проходят наши дни!",
+    videos: [
+      "https://rutube.ru/play/embed/bc6dad34cf95c860799930a079869450/",
+    ],
+  },
+  {
     date: "8 мая 2026",
     emoji: "🎬",
     color: "bg-kidz-purple",

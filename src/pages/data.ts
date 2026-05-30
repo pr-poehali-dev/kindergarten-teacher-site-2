@@ -683,6 +683,7 @@ export const NEWS = [
     text: "Делимся новым видео из жизни нашей группы. Смотрите, как весело и интересно проходят наши дни!",
     videos: [
       "https://rutube.ru/play/embed/bc6dad34cf95c860799930a079869450/",
+      "https://rutube.ru/play/embed/b4c4fbb7f4a4d787ea28d04553ce18a3/?p=j7JbtoXHoGUyEn97ogltLg",
     ],
   },
   {

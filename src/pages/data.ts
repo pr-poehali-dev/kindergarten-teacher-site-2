@@ -687,6 +687,10 @@ export const NEWS = [
       "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/7643f3ba-9041-42ad-a060-24fd9f435c67.jpg",
       "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/03ef2eb2-9674-4e20-94fe-6ecd6df8583c.jpg",
       "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/c3b3038e-25cd-42bd-bb11-3756e2a777d7.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/d0524b22-8ad5-434d-96a8-a89b9403c1b4.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/17eafbec-143f-4eb5-81d4-cf4f033dabc5.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/5376ab5f-79c5-4732-9dd8-c373cecadae7.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/be60767d-f86a-421c-ae14-44b1ea3d48ef.jpg",
     ],
   },
   {

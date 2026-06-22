@@ -693,17 +693,7 @@ export const NEWS = [
       "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/be60767d-f86a-421c-ae14-44b1ea3d48ef.jpg",
     ],
   },
-  {
-    date: "30 мая 2026",
-    emoji: "🎥",
-    color: "bg-kidz-green",
-    title: "Видеоролик нашей группы",
-    text: "Делимся новым видео из жизни нашей группы. Смотрите, как весело и интересно проходят наши дни!",
-    videos: [
-      "https://rutube.ru/play/embed/bc6dad34cf95c860799930a079869450/",
-      "https://rutube.ru/play/embed/b4c4fbb7f4a4d787ea28d04553ce18a3/?p=j7JbtoXHoGUyEn97ogltLg",
-    ],
-  },
+
   {
     date: "8 мая 2026",
     emoji: "🎬",

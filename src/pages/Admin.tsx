@@ -3,26 +3,54 @@ import Icon from "@/components/ui/icon";
 
 const ADMIN_URL = "https://functions.poehali.dev/9c0cf207-acc6-4481-b777-145da3f7021a";
 
-const api = (action: string, extra?: object) =>
+const api = (password: string, action: string, extra?: object) =>
   fetch(ADMIN_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ password: "2209", action, ...extra }),
+    body: JSON.stringify({ password, action, ...extra }),
   });
 
 type Review = { id: number; name: string; text: string; rating: number; approved: boolean; created_at: string };
 
 export default function Admin() {
+  const [password, setPassword] = useState("");
+  const [authed, setAuthed] = useState(false);
+  const [authError, setAuthError] = useState("");
+  const [authLoading, setAuthLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loading, setLoading] = useState(false);
   const [addForm, setAddForm] = useState({ name: "", text: "", rating: 5 });
   const [addLoading, setAddLoading] = useState(false);
   const [showAdd, setShowAdd] = useState(false);
 
+  const login = async () => {
+    if (!password.trim()) return;
+    setAuthLoading(true);
+    setAuthError("");
+    try {
+      const r = await api(password, "list");
+      if (r.status === 401) {
+        setAuthError("Неверный пароль");
+      } else if (r.ok) {
+        const data = await r.json();
+        const parsed = typeof data === "string" ? JSON.parse(data) : data;
+        setReviews(parsed.reviews || []);
+        setAuthed(true);
+      } else {
+        setAuthError("Ошибка соединения");
+      }
+    } catch {
+      setAuthError("Ошибка соединения");
+    }
+    setAuthLoading(false);
+  };
+
   const fetchReviews = async () => {
     setLoading(true);
     try {
-      const r = await api("list");
+      const r = await api(password, "list");
       const data = await r.json();
       const parsed = typeof data === "string" ? JSON.parse(data) : data;
       setReviews(parsed.reviews || []);
@@ -30,23 +58,25 @@ export default function Admin() {
     setLoading(false);
   };
 
-  useEffect(() => { fetchReviews(); }, []);
+  useEffect(() => {
+    if (authed) fetchReviews();
+  }, [authed]);
 
   const approve = async (id: number, approved: boolean) => {
-    await api("approve", { id, approved });
+    await api(password, "approve", { id, approved });
     fetchReviews();
   };
 
   const remove = async (id: number) => {
     if (!confirm("Удалить отзыв?")) return;
-    await api("delete", { id });
+    await api(password, "delete", { id });
     fetchReviews();
   };
 
   const addReview = async () => {
     if (!addForm.name.trim() || !addForm.text.trim()) return;
     setAddLoading(true);
-    await api("add", addForm);
+    await api(password, "add", addForm);
     setAddForm({ name: "", text: "", rating: 5 });
     setShowAdd(false);
     await fetchReviews();
@@ -55,6 +85,45 @@ export default function Admin() {
 
   const pending = reviews.filter(r => !r.approved);
   const approved = reviews.filter(r => r.approved);
+
+  if (!authed) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+        <div className="bg-white rounded-2xl shadow-sm p-8 w-full max-w-sm">
+          <div className="text-center mb-6">
+            <div className="text-4xl mb-3">🔐</div>
+            <h1 className="font-bold text-xl text-gray-800">Вход в панель</h1>
+            <p className="text-sm text-gray-400 mt-1">Управление отзывами</p>
+          </div>
+          <div className="relative mb-3">
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder="Пароль"
+              value={password}
+              onChange={e => { setPassword(e.target.value); setAuthError(""); }}
+              onKeyDown={e => e.key === "Enter" && login()}
+              className="w-full border border-gray-200 rounded-xl px-4 py-3 pr-12 text-sm focus:outline-none focus:border-orange-400"
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(v => !v)}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+            >
+              <Icon name={showPassword ? "EyeOff" : "Eye"} size={18} />
+            </button>
+          </div>
+          {authError && <p className="text-red-500 text-sm mb-3 text-center">{authError}</p>}
+          <button
+            onClick={login}
+            disabled={authLoading || !password.trim()}
+            className="w-full bg-orange-400 text-white font-bold py-3 rounded-xl hover:opacity-90 disabled:opacity-50 text-sm"
+          >
+            {authLoading ? "Проверяю..." : "Войти"}
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 p-4">
@@ -72,7 +141,12 @@ export default function Admin() {
             >
               <Icon name="Plus" size={15} /> Добавить
             </button>
-
+            <button
+              onClick={() => { setAuthed(false); setPassword(""); setReviews([]); }}
+              className="bg-gray-100 text-gray-600 text-sm font-bold px-4 py-2 rounded-xl hover:opacity-90"
+            >
+              Выйти
+            </button>
           </div>
         </div>
 

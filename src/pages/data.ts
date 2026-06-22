@@ -677,6 +677,16 @@ export const PROJECTS = [
 export const NEWS = [
   {
     date: "1 июня 2026",
+    emoji: "💛",
+    color: "bg-kidz-yellow",
+    title: "«От всего сердца»",
+    text: "Родители наших воспитанников поделились тёплыми словами о жизни в группе. Эти искренние слова — самая дорогая награда для нас! Спасибо каждой семье за доверие и поддержку. 🥰",
+    videos: [
+      "https://rutube.ru/play/embed/b4c4fbb7f4a4d787ea28d04553ce18a3/?p=j7JbtoXHoGUyEn97ogltLg",
+    ],
+  },
+  {
+    date: "1 июня 2026",
     emoji: "🎈",
     color: "bg-kidz-pink",
     title: "День защиты детей!",

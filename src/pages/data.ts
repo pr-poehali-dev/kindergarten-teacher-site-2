@@ -676,6 +676,20 @@ export const PROJECTS = [
 
 export const NEWS = [
   {
+    date: "1 июня 2026",
+    emoji: "🎈",
+    color: "bg-kidz-pink",
+    title: "День защиты детей!",
+    text: "Отпраздновали Международный день защиты детей ярким праздником на улице! Аниматоры в костюмах устроили весёлые игры, конкурсы и подарили детям мыльные пузыри. Смех, музыка и шарики — вот что такое настоящий детский праздник! 🎉",
+    photos: [
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/fb2fe176-a54e-4cdb-a23e-d74c78cf1687.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/5fc03bb8-e391-42aa-a43d-67aeab80a120.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/7643f3ba-9041-42ad-a060-24fd9f435c67.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/03ef2eb2-9674-4e20-94fe-6ecd6df8583c.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/c3b3038e-25cd-42bd-bb11-3756e2a777d7.jpg",
+    ],
+  },
+  {
     date: "30 мая 2026",
     emoji: "🎥",
     color: "bg-kidz-green",

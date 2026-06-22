@@ -683,6 +683,7 @@ export const NEWS = [
     text: "Родители наших воспитанников поделились тёплыми словами о жизни в группе. Эти искренние слова — самая дорогая награда для нас! Спасибо каждой семье за доверие и поддержку. 🥰",
     videos: [
       "https://rutube.ru/play/embed/b4c4fbb7f4a4d787ea28d04553ce18a3/?p=j7JbtoXHoGUyEn97ogltLg",
+      "https://rutube.ru/play/embed/bc6dad34cf95c860799930a079869450/?p=1YHHjlAdSYFc5G7BCaqYqA",
     ],
   },
   {

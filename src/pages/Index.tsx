@@ -397,7 +397,7 @@ export default function Index() {
       <section id="news" className="relative z-10 py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <SectionTitle emoji="📰" title="Новости" color="text-kidz-orange" />
-          <p className="text-center text-gray-500 mt-2 mb-10">События и объявления нашей группы</p>
+          <p className="text-center text-gray-500 mt-2 mb-10">События нашей группы</p>
           <div className="grid md:grid-cols-2 gap-6">
             {NEWS.map((item, i) => (
               <div key={i} className="bg-kidz-cream rounded-3xl p-6 hover:shadow-xl transition-all duration-300">

@@ -592,7 +592,6 @@ export const PROJECTS = [
       "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/d24bd858-7bce-4ec2-82a3-0bb6a70223ca.jpg",
       "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/3e137c49-5647-4cee-a87a-d99b9514917c.jpg",
       "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/028c73f4-3a2c-4ef4-a3dc-cbec1679f949.jpg",
-      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/0183f8fc-1039-436b-9ce3-a547b3bff1fa.jpg",
       "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/9b65ff0c-467e-4e03-8ead-c6a9be223445.jpg",
     ],
     content: `Краткосрочный проект «Осень золотая» во второй младшей группе
@@ -976,7 +975,6 @@ export const NEWS = [
       "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/9b65ff0c-467e-4e03-8ead-c6a9be223445.jpg",
       "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/c6b13374-904e-4bfd-8e92-27a1819c4845.jpg",
       "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/028c73f4-3a2c-4ef4-a3dc-cbec1679f949.jpg",
-      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/0183f8fc-1039-436b-9ce3-a547b3bff1fa.jpg",
       "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/a82989c8-bfa0-457f-9a3d-de6503ecaf25.jpg",
       "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/d24bd858-7bce-4ec2-82a3-0bb6a70223ca.jpg",
       "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/3e137c49-5647-4cee-a87a-d99b9514917c.jpg",
@@ -1093,13 +1091,6 @@ export const NEWS = [
     ],
   },
   {
-    date: "28 апреля 2026",
-    emoji: "🎖️",
-    color: "bg-kidz-red",
-    title: "Объявление: подготовка ко Дню Победы",
-    text: "Дорогие родители! Готовимся к празднику 9 Мая вместе! Просим принести: 📷 фотографии ветеранов — родственников для стенда «Бессмертный полк»; 🎨 поделки на тему Победы, сделанные дома; 📚 детские книги о войне и Победе для нашей читальной полки. 6 мая приглашаем всех на праздничный парад в детском саду — нарядите ребёнка и приходите вместе! Вместе сохраним память о героях!",
-  },
-  {
     date: "12 апреля 2026",
     emoji: "🚀",
     color: "bg-kidz-blue",
@@ -1120,13 +1111,6 @@ export const NEWS = [
       "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/6debbf20-b4f0-43d7-b9ab-24fc52f2f7ab.jpg",
       "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/ae9e69bf-4883-42be-9cf5-19a22ff655de.jpg",
     ],
-  },
-  {
-    date: "18 апреля 2026",
-    emoji: "🥕",
-    color: "bg-kidz-orange",
-    title: "Объявление: огород на подоконнике",
-    text: "Начинаем совместный проект — сажаем лук, укроп и петрушку прямо в группе. Приносите небольшие горшочки или контейнеры для рассады. Дети будут наблюдать за ростом растений.",
   },
   {
     date: "1 апреля 2026",
@@ -1235,7 +1219,6 @@ export const GALLERY_GROUPS = [
       { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/9b65ff0c-467e-4e03-8ead-c6a9be223445.jpg", label: "Игра «Солнышко и дождик»" },
       { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/c6b13374-904e-4bfd-8e92-27a1819c4845.jpg", label: "Подвижная игра «Осенний хоровод»" },
       { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/028c73f4-3a2c-4ef4-a3dc-cbec1679f949.jpg", label: "Лепка «Яблочки для ёжика»" },
-      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/0183f8fc-1039-436b-9ce3-a547b3bff1fa.jpg", label: "Лепка «Яблочки для ёжика»" },
       { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/a82989c8-bfa0-457f-9a3d-de6503ecaf25.jpg", label: "Наша осенняя картина из листьев" },
       { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/d24bd858-7bce-4ec2-82a3-0bb6a70223ca.jpg", label: "Приклеиваем листочки" },
       { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/3e137c49-5647-4cee-a87a-d99b9514917c.jpg", label: "Собираем осеннюю композицию" },

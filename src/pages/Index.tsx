@@ -696,6 +696,36 @@ export default function Index() {
             </div>
           </div>
 
+          <div className="bg-kidz-cream rounded-3xl p-6 mt-6">
+            <div className="font-bold text-gray-800 text-center text-lg mb-2">🍂 Дипломы конкурса «Чарующие краски осени», 2026</div>
+            <p className="text-center text-gray-500 text-sm mb-5">Всероссийский конкурс творческих работ, образовательный центр «INCEPTUM»</p>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              {[
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/6819c8f8-3838-4796-9122-c0ef46b3a009.jpg", name: "Шароян Милана", work: "«Ёжик»", place: "🥇 Лауреат" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/48950e5e-f996-4726-8959-71ed3e2091e7.jpg", name: "Таранина Карина", work: "«Лесная полянка»", place: "🥈 II место" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/57e15fd2-aed8-4953-8759-db0746155ed1.jpg", name: "Микрюкова София", work: "«Краски осени»", place: "🥇 Лауреат" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/3885daf6-ec2d-440d-92ad-098968ca63a0.jpg", name: "Гомелев Кирилл", work: "«Домик в лесу»", place: "🥈 II место" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/da66054e-994d-4eef-b083-8f9181f24821.jpg", name: "Аргазинов Алан", work: "«Праздник урожая»", place: "🥇 Лауреат" },
+              ].map((child, i) => (
+                <div key={i} onClick={() => setLightboxSrc(child.src)} className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group cursor-zoom-in">
+                  <div className="relative overflow-hidden">
+                    <img src={child.src} alt={child.name} className="w-full h-40 object-cover object-top group-hover:scale-105 transition-transform duration-300" />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center">
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 rounded-full p-2 shadow-lg">
+                        <Icon name="ZoomIn" size={16} />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-3 text-center">
+                    <p className="text-xs font-semibold text-gray-700">{child.place}</p>
+                    <p className="text-xs text-gray-700 font-medium mt-0.5">{child.name}</p>
+                    <p className="text-xs text-gray-500">{child.work}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Личные награды воспитателя */}
           <div className="bg-gradient-to-br from-kidz-yellow/20 to-kidz-orange/10 border-2 border-kidz-yellow rounded-3xl p-6 mt-6">
             <div className="font-bold text-gray-800 text-center text-lg mb-1">🏅 Мои личные награды</div>

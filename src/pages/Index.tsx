@@ -976,6 +976,16 @@ export default function Index() {
           <div className="px-6 py-6 text-gray-700 text-sm leading-relaxed whitespace-pre-line">
             {openProject.content}
           </div>
+          {'photos' in openProject && openProject.photos && (
+            <div className="px-6 pb-6">
+              <div className="font-bold text-gray-800 mb-3">📸 Фотоотчёт</div>
+              <div className="grid grid-cols-2 gap-2">
+                {openProject.photos.map((src: string, pi: number) => (
+                  <img key={pi} src={src} alt="" className="rounded-2xl w-full h-36 object-cover" />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     )}

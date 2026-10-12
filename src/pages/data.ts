@@ -798,6 +798,20 @@ export const PROJECTS = [
 export const NEWS = [
   {
     date: "12 октября 2026",
+    emoji: "🍁",
+    color: "bg-kidz-orange",
+    title: "Осенняя неделя в нашей группе",
+    text: "Малыши собрали яркую коллективную работу из осенних листьев, рассматривали картины об осени, играли в «Дождик и зонтик» и водили осенний хоровод. На лепке ребята сделали румяные яблочки для ёжика. Осень в группе — весёлая и красочная! 🍂🍎☔",
+    photos: [
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/de52a022-e532-4492-977b-5b42ad435d4f.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/31dcfc48-5433-443d-9916-5e7332c1f3dd.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/9b65ff0c-467e-4e03-8ead-c6a9be223445.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/c6b13374-904e-4bfd-8e92-27a1819c4845.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/028c73f4-3a2c-4ef4-a3dc-cbec1679f949.jpg",
+    ],
+  },
+  {
+    date: "12 октября 2026",
     emoji: "🍂",
     color: "bg-kidz-orange",
     title: "Победы во Всероссийском конкурсе «Чарующие краски осени»",
@@ -1024,6 +1038,10 @@ export const ACTIVITIES = [
   { emoji: "📚", title: "Художественная литература", desc: "Четверг • 16:00–16:40\nЧитаем, обсуждаем и пересказываем сказки и рассказы — развиваем любовь к книге", color: "bg-kidz-yellow", day: "Чт" },
   { emoji: "🏺", title: "Лепка / Аппликация", desc: "Пятница • 9:00–9:50\nРабота с пластилином и бумагой — развиваем пространственное мышление и фантазию", color: "bg-kidz-green", day: "Пт" },
   { emoji: "🌳", title: "Физкультура на прогулке", desc: "Пятница • 10:30–10:50\nДвижение на свежем воздухе: укрепляем здоровье и наслаждаемся природой", color: "bg-kidz-blue", day: "Пт" },
+  { emoji: "🍂", title: "Аппликация «Осенние листья»", desc: "Пятница • 9:00–9:50\nСоставляем коллективную картину из осенних листьев — учимся различать цвета и формы, развиваем мелкую моторику", color: "bg-kidz-orange", day: "Пт" },
+  { emoji: "🍎", title: "Лепка «Яблочки для ёжика»", desc: "Пятница • 9:00–9:50\nЛепим из пластилина яблоки и угощаем ёжика — осваиваем скатывание и сплющивание", color: "bg-kidz-pink", day: "Пт" },
+  { emoji: "☔", title: "Игра «Дождик и зонтик»", desc: "Вторник & Четверг • 10:20–10:40\nПодвижная игра под зонтиком: бегаем, прячемся от «дождика» и учимся слушать сигнал", color: "bg-kidz-blue", day: "Вт / Чт" },
+  { emoji: "🖼️", title: "Беседа «Осень в картинах»", desc: "Понедельник • 9:00–9:20\nРассматриваем осенние картины, называем приметы осени и развиваем речь", color: "bg-kidz-green", day: "Пн" },
   { emoji: "🌟", title: "Проект-итоговое мероприятие", desc: "Пятница • 16:00–16:40\nПознавательное развитие: подводим итоги недели, делаем совместные проекты", color: "bg-kidz-pink", day: "Пт" },
 ];
 
@@ -1034,6 +1052,18 @@ export const ACHIEVEMENTS = [
 ];
 
 export const GALLERY_GROUPS = [
+  {
+    title: "Осень",
+    emoji: "🍂",
+    color: "text-kidz-orange",
+    items: [
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/de52a022-e532-4492-977b-5b42ad435d4f.jpg", label: "Коллективная работа «Осенние листья»" },
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/31dcfc48-5433-443d-9916-5e7332c1f3dd.jpg", label: "Рассматриваем осенние картины" },
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/9b65ff0c-467e-4e03-8ead-c6a9be223445.jpg", label: "Игра «Дождик и зонтик»" },
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/c6b13374-904e-4bfd-8e92-27a1819c4845.jpg", label: "Подвижная игра «Осенний хоровод»" },
+      { photo: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/028c73f4-3a2c-4ef4-a3dc-cbec1679f949.jpg", label: "Лепка «Яблочки для ёжика»" },
+    ],
+  },
   {
     title: "Сказки",
     emoji: "📖",

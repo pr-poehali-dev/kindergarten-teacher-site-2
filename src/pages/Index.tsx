@@ -758,6 +758,7 @@ export default function Index() {
                 { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/6cc07a2c-fcdf-4511-b636-9ce77bd6c9e3.jpg", label: "Диплом победителя (1 место) — Всероссийский конкурс «Стенгазета» (Мамочка, ты тоже маленькой была), «Солнечный свет», 2026" },
                 { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/d8e46109-101d-47c8-a3f6-8894961aa7c9.jpg", label: "Диплом победителя (1 место) — Открытое региональное конкурсное мероприятие «Лучшая презентация проекта», «Золотой век», 2026" },
                 { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/143db774-69e8-4483-aa55-8e3117c08aa3.jpg", label: "Благодарственное письмо — помощь в организации Всероссийского конкурса «Чарующие краски осени», «INCEPTUM», 2026" },
+                { src: "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/b22cb084-1bd3-422d-a5fc-a426fb725040.jpg", label: "Диплом победителя (1 место) — Всероссийский конкурс, номинация «Время года» (Золотая осень), «Солнечный свет», 2026" },
               ].map((award, i) => (
                 <div
                   key={i}

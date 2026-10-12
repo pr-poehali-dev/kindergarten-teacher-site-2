@@ -730,6 +730,20 @@ export const PROJECTS = [
 
 export const NEWS = [
   {
+    date: "12 октября 2026",
+    emoji: "🍂",
+    color: "bg-kidz-orange",
+    title: "Победы во Всероссийском конкурсе «Чарующие краски осени»",
+    text: "Поздравляем наших ребят с замечательными результатами во Всероссийском конкурсе творческих работ «Чарующие краски осени»! Лауреатами стали Шароян Милана («Ёжик»), Микрюкова София («Краски осени») и Аргазинов Алан («Праздник урожая»). Дипломы II места получили Таранина Карина («Лесная полянка») и Гомелев Кирилл («Домик в лесу»). Гордимся нашими маленькими художниками! Организатор конкурса выразил благодарность воспитателю Говоровой Марии Михайловне за помощь в организации и проведении конкурса. 🎨🍁",
+    photos: [
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/6819c8f8-3838-4796-9122-c0ef46b3a009.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/48950e5e-f996-4726-8959-71ed3e2091e7.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/57e15fd2-aed8-4953-8759-db0746155ed1.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/3885daf6-ec2d-440d-92ad-098968ca63a0.jpg",
+      "https://cdn.poehali.dev/projects/b4ae50f1-b43b-46af-8337-6ac7bde0d6f4/bucket/da66054e-994d-4eef-b083-8f9181f24821.jpg",
+    ],
+  },
+  {
     date: "9 сентября 2026",
     emoji: "🍎",
     color: "bg-kidz-green",
